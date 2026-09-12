@@ -1,118 +1,98 @@
-# Synapse — Design System & Interface Specification
-
 ## 1. Design Overview
 
-**Synapse** adalah portfolio website kelompok UI/UX Design yang berfungsi sebagai media dokumentasi, showcase, dan review akademik.
+### Product
 
-Website menampilkan karya dari dua domain utama:
+**Synapse**
 
-- Pendidikan
-    
-- Industri
-    
+### Design Purpose
 
-Namun, **kedua domain tersebut tidak memiliki visual language yang berbeda pada website**.
+`DESIGN.md` mendefinisikan sistem visual, struktur layout, komponen, interaction pattern, responsive behavior, state, dan accessibility untuk website portfolio kelompok **Synapse**.
 
-Synapse menggunakan satu visual identity yang konsisten untuk seluruh website.
+Synapse merupakan portfolio yang mendokumentasikan karya UI/UX kelompok, termasuk proyek dalam bidang Pendidikan dan Industri.
 
-### Design Direction
+Website memiliki **visual identity tersendiri** dan tidak menggabungkan visual direction dari kedua bidang tersebut.
 
-Synapse menggunakan pendekatan:
-
-- Editorial
-    
-- Minimal
-    
-- Spacious
-    
-- Contemporary
-    
-- Academic
-    
-- Creative
-    
-- Content-first
-    
-- Typography-driven
-    
-- Subtle interaction
-    
-
-Inspirasi utama untuk project showcase berasal dari pola editorial dan gallery pada Awwwards, terutama penggunaan whitespace, typography besar, grid yang terstruktur, visual karya sebagai focal point, dan navigasi yang minimal. Awwwards sendiri menggunakan pendekatan gallery/curation dengan hierarki tipografi kuat dan layout yang memberi ruang besar pada konten.
-
-Synapse **tidak menggunakan gradient** sebagai bagian dari design system.
+Bidang Pendidikan dan Industri merupakan **kategori konten**, sedangkan Synapse memiliki design language independen.
 
 ---
 
 # 2. Design Principles
 
-## 2.1 Content First
+## 2.1 Editorial Portfolio
 
-Karya dan dokumentasi UI/UX merupakan fokus utama.
+Synapse menggunakan pendekatan visual seperti editorial portfolio modern:
 
-Dekorasi tidak boleh mengalahkan informasi proyek.
+* Large typography.
+* Generous whitespace.
+* Strong visual hierarchy.
+* Large project imagery.
+* Asymmetric composition.
+* Controlled interaction.
+* Minimal decorative elements.
+* Content sebagai fokus utama.
 
-## 2.2 Spacious by Default
+Inspirasi layout dapat mengambil pendekatan showcase portfolio seperti yang umum digunakan pada platform Awwwards.
 
-Whitespace merupakan elemen visual utama.
+Namun, Synapse tidak menyalin layout atau identitas visual dari website tertentu.
 
-Section tidak perlu dipenuhi konten hanya untuk menghindari ruang kosong.
+---
 
-## 2.3 Typography as Structure
+## 2.2 Negative Space First
 
-Hierarchy terutama dibangun melalui:
+Whitespace merupakan bagian utama dari komposisi.
 
-- ukuran typography,
-    
-- weight,
-    
-- spacing,
-    
-- alignment,
-    
-- dan contrast.
-    
+Ruang kosong tidak dianggap sebagai area yang harus selalu diisi.
 
-Bukan melalui banyak warna atau dekorasi.
+Penggunaan whitespace bertujuan untuk:
 
-## 2.4 Editorial Presentation
+* memberikan jeda visual;
+* meningkatkan hierarchy;
+* memperkuat typography;
+* membuat artwork lebih menonjol;
+* memberikan kesan premium/editorial.
 
-Project diperlakukan seperti editorial content atau curated gallery.
+---
 
-Setiap karya harus memiliki ruang yang cukup untuk menjadi focal point.
+## 2.3 Content Over Decoration
 
-## 2.5 Motion With Purpose
+Animasi, visual effect, dan interaction digunakan untuk membantu pengguna memahami dan menjelajahi konten.
 
-Animasi digunakan untuk:
+Tidak menggunakan:
 
-- menunjukkan hubungan antar-elemen,
-    
-- memberikan feedback,
-    
-- memperkuat navigasi,
-    
-- dan meningkatkan sense of continuity.
-    
+* gradient sebagai elemen visual utama;
+* decorative animation yang tidak memiliki fungsi;
+* excessive shadows;
+* excessive rounded cards;
+* autoplay carousel yang menghilangkan kontrol pengguna.
 
-Animasi tidak boleh menghambat pembacaan konten.
+---
 
-## 2.6 Accessible by Default
+## 2.4 Calm but Expressive
 
-Accessibility menjadi bagian dari design system sejak awal dan menargetkan WCAG 2.1 AA.
+Synapse harus terasa:
+
+* modern;
+* editorial;
+* confident;
+* sophisticated;
+* clean;
+* expressive tetapi tidak berlebihan.
+
+Motion digunakan secara subtle dengan beberapa interaction yang lebih expressive pada bagian Hero dan Project Showcase.
 
 ---
 
 # 3. User Flows
 
-## 3.1 Primary Public Flow
+## 3.1 Primary Reviewer Flow
 
 ```text
-Landing
-   │
-   ▼
-Intro / Welcome
-   │
-   ▼
+Landing Page
+     │
+     ▼
+Welcome / Introduction
+     │
+     ▼
 Split-View Hero
    │
    ▼
@@ -135,6 +115,8 @@ Project Showcase
            ▼
        Project Detail
 ```
+
+Tujuan utama flow ini adalah membuat reviewer dapat menemukan karya tanpa harus memahami struktur internal website terlebih dahulu.
 
 ---
 
@@ -165,9 +147,7 @@ Weekly Assignment Archive
 Footer
 ```
 
-Pengguna tidak harus mengikuti seluruh halaman secara linear.
-
-Navbar harus memungkinkan pengguna berpindah langsung ke section utama.
+Pengguna dapat berpindah antar-section menggunakan navbar atau anchor navigation.
 
 ---
 
@@ -198,10 +178,7 @@ Project Detail
          Figma Prototype
 ```
 
-Bagian yang tidak tersedia untuk sebuah proyek tidak perlu dirender.
-
 ---
-
 ## 3.4 Theme Flow
 
 ```text
@@ -218,29 +195,23 @@ Initial Theme
       Update UI Theme
 ```
 
-Preferensi theme sebaiknya dipertahankan ketika pengguna kembali mengunjungi website.
-
-Jika belum ada preferensi tersimpan, sistem dapat mengikuti preferensi sistem operasi pengguna.
-
----
-
 ## 3.5 Admin Flow
 
-Karena CMS menggunakan Sanity, pengelolaan konten dilakukan melalui **Sanity Studio**, bukan custom admin dashboard pada public website.
+CMS menggunakan **Sanity**.
 
 ```text
 Admin
-  │
-  ▼
+ │
+ ▼
 Authentication
-  │
-  ▼
+ │
+ ▼
 Sanity Studio
-  │
-  ├── Projects
-  ├── Team Members
-  ├── Weekly Assignments
-  └── Site Content
+ │
+ ├── Projects
+ ├── Team Members
+ ├── Weekly Assignments
+ └── Portfolio Content
           │
           ▼
        Publish
@@ -249,7 +220,7 @@ Sanity Studio
     Public Website
 ```
 
-Public website tidak menyediakan authentication untuk pengunjung umum.
+Pengelolaan konten tidak dilakukan melalui custom dashboard pada website publik.
 
 ---
 
@@ -265,1132 +236,946 @@ Public website tidak menyediakan authentication untuk pengunjung umum.
 |SCR-06|Error|Dynamic|P1|Fallback ketika terjadi error|
 |SCR-07|Loading|Dynamic|P1|Loading state|
 
+### Home Sections
+
+S01 memiliki struktur:
+
+1. Navbar
+2. Welcome / Negative Space
+3. Split-View Hero
+4. Project Showcase
+5. Design System Preview
+6. Team
+7. Weekly Assignment Archive
+8. Footer
+
 ---
 
-# 5. Homepage Layout
+# 5. Screen Layouts
 
-## 5.1 Global Structure
+# 5.1 Home
+
+## Global Structure
 
 ```text
-┌──────────────────────────────────────┐
-│ Navbar                               │
-├──────────────────────────────────────┤
-│                                      │
-│          Welcome / Intro             │
-│                                      │
-│                                      │
-├──────────────────────────────────────┤
-│                                      │
-│          Split-View Hero             │
-│                                      │
-├──────────────────────────────────────┤
-│                                      │
-│        Project Showcase              │
-│                                      │
-├──────────────────────────────────────┤
-│                                      │
-│      Design System Preview           │
-│                                      │
-├──────────────────────────────────────┤
-│                                      │
-│             Team                     │
-│                                      │
-├──────────────────────────────────────┤
-│                                      │
-│      Weekly Assignment Archive       │
-│                                      │
-├──────────────────────────────────────┤
-│ Footer                               │
-└──────────────────────────────────────┘
+┌───────────────────────────────────────┐
+│ Navbar                                │
+├───────────────────────────────────────┤
+│                                       │
+│                                       │
+│         WELCOME / NEGATIVE SPACE      │
+│                                       │
+│              SYNAPSE                  │
+│          Caption / Body               │
+│                                       │
+│                                       │
+├───────────────────────────────────────┤
+│                                       │
+│          SPLIT-VIEW HERO              │
+│                                       │
+│       Education | Industry            │
+│                                       │
+├───────────────────────────────────────┤
+│                                       │
+│       PROJECT SHOWCASE                │
+│                                       │
+│       Horizontal / Editorial          │
+│                                       │
+├───────────────────────────────────────┤
+│       DESIGN SYSTEM PREVIEW           │
+├───────────────────────────────────────┤
+│       TEAM                            │
+├───────────────────────────────────────┤
+│       WEEKLY ARCHIVE                  │
+├───────────────────────────────────────┤
+│       FOOTER                          │
+└───────────────────────────────────────┘
 ```
 
 ---
 
-# 6. Screen: Navbar
+# 5.2 Navbar
 
-## Purpose
+Navbar bersifat minimal dan tidak mengambil terlalu banyak visual attention.
 
-Memberikan akses cepat ke section utama.
+### Content
 
-## Layout
+* Synapse / Logo.
+* Navigation links.
+* Dark/Light mode toggle.
+
+### Navigation
+
+```text
+Projects
+Design System
+Team
+Archive
+```
+
+Pada mobile, navigation dapat berubah menjadi menu drawer atau compact menu.
+
+### Behavior
+
+Navbar dapat menggunakan sticky positioning apabila diperlukan untuk mempertahankan akses navigasi.
+
+---
+
+# 5.3 Welcome / Negative Space
+
+Bagian ini berada:
+
+```text
+Navbar
+   ↓
+Welcome
+   ↓
+Split-View Hero
+```
+
+Welcome section merupakan halaman pembuka yang sangat luas dengan **white/negative space**.
+
+### Content
+
+Hanya menampilkan:
+
+```text
+SYNAPSE
+
+[body / caption]
+```
+
+Tidak menggunakan:
+
+* image hero;
+* card;
+* gradient;
+* decorative illustration;
+* excessive animation.
+
+### Composition
+
+Logo/nama **Synapse** menjadi focal point.
+
+Caption berada di bawahnya dengan hierarchy yang jauh lebih kecil.
+
+### Intended Feeling
+
+* Calm.
+* Spacious.
+* Confident.
+* Premium.
+* Anticipatory.
+
+Whitespace menjadi elemen utama, bukan kekosongan yang harus ditambal.
+
+---
+
+# 5.4 Split-View Hero
+
+Split-View Hero memperkenalkan dua kategori portfolio:
+
+```text
+┌──────────────────┬──────────────────┐
+│                  │                  │
+│    PENDIDIKAN    │     INDUSTRI     │
+│                  │                  │
+│    Explore →     │     Explore →    │
+│                  │                  │
+└──────────────────┴──────────────────┘
+```
+
+### Interaction
 
 Desktop:
 
-```text
-┌──────────────────────────────────────────────┐
-│ Synapse        Work   System   Team   Archive │
-│                                      ◐ Theme │
-└──────────────────────────────────────────────┘
-```
-
-Karakter:
-
-- compact,
-    
-- minimal,
-    
-- horizontal,
-    
-- sticky,
-    
-- tidak mendominasi hero.
-    
-
-## Elements
-
-- Synapse logo/wordmark.
-    
-- Work anchor.
-    
-- Design System anchor.
-    
-- Team anchor.
-    
-- Archive anchor.
-    
-- Theme toggle.
-    
-
-## Mobile
-
-Navbar berubah menjadi:
-
-```text
-┌──────────────────────────┐
-│ Synapse          Menu ☰ │
-└──────────────────────────┘
-```
-
-Menu dapat membuka navigation drawer atau compact overlay.
-
----
-
-# 7. Screen: Welcome / Intro
-
-Ini merupakan section pembuka sebelum Split-View Hero.
-
-Tujuannya adalah memberikan **ruang kosong yang sangat luas** sehingga identitas Synapse menjadi focal point pertama.
-
-## Layout
-
-```text
-┌──────────────────────────────────────────────┐
-│                                              │
-│                                              │
-│                                              │
-│                    SYNAPSE                   │
-│                                              │
-│             Group UI/UX Portfolio            │
-│                                              │
-│                                              │
-│                                              │
-│                                              │
-└──────────────────────────────────────────────┘
-```
-
-## Content
-
-Primary:
-
-**Synapse**
-
-Secondary:
-
-Short caption/body yang menjelaskan bahwa Synapse merupakan portfolio dan dokumentasi karya UI/UX kelompok.
-
-Copy final dikelola melalui CMS apabila diperlukan.
-
-## Design Rules
-
-- Tidak menggunakan card.
-    
-- Tidak menggunakan gradient.
-    
-- Tidak menggunakan ilustrasi besar.
-    
-- Tidak menggunakan dekorasi berlebihan.
-    
-- Memanfaatkan negative space.
-    
-- Typography menjadi elemen utama.
-    
-- Section idealnya memiliki tinggi mendekati viewport.
-    
-
----
-
-# 8. Screen: Split-View Hero
-
-## Purpose
-
-Memperkenalkan dua kelompok karya:
-
-- Pendidikan
-    
-- Industri
-    
-
-## Layout
-
-```text
-┌──────────────────────┬──────────────────────┐
-│                      │                      │
-│     PENDIDIKAN       │       INDUSTRI       │
-│                      │                      │
-│    Project Intro     │     Project Intro    │
-│                      │                      │
-│       Explore →      │        Explore →     │
-│                      │                      │
-└──────────────────────┴──────────────────────┘
-```
-
-## Interaction
-
-Desktop:
-
-- cursor interaction,
-    
-- subtle hover expansion,
-    
-- typography movement,
-    
-- image scaling ringan.
-    
+* Dua area berbagi viewport.
+* Hover dapat mengubah proporsi area secara subtle.
+* Typography/image dapat merespons pointer secara ringan.
 
 Mobile:
 
-- stacked layout,
-    
-- Pendidikan diikuti Industri.
-    
+* Dua panel disusun secara vertikal atau menggunakan interaction yang tetap dapat diakses melalui touch.
 
-Tidak boleh menggunakan efek yang menyebabkan pengguna kehilangan konteks navigasi.
+### Important Rule
 
----
+Split-View Hero tidak mengubah Synapse menjadi gabungan dua design system.
 
-# 9. Screen: Project Showcase
-
-## Design Reference
-
-Project showcase mengambil inspirasi dari pola curated gallery/editorial yang digunakan Awwwards: visual karya menjadi elemen utama, metadata tetap minimal, dan whitespace digunakan untuk menciptakan hierarchy.
-
-## Desktop Layout
-
-```text
-                 SELECTED WORK
-
-        ┌──────────────────────────────┐
-        │                              │
-        │        Project Preview       │
-        │                              │
-        │                              │
-        └──────────────────────────────┘
-
- Project Name
- Category · Year
-
- Short description                         →
-```
-
-Beberapa project ditampilkan sebagai rangkaian panel horizontal.
-
-## Interaction
-
-Horizontal showcase menggunakan:
-
-- sticky section,
-    
-- vertical scroll → horizontal progression,
-    
-- drag/swipe pada touch device,
-    
-- keyboard navigation jika memungkinkan.
-    
-
-Tidak menggunakan infinite autoplay carousel.
-
-## Project Card
-
-```text
-┌──────────────────────────────┐
-│                              │
-│       Project Visual         │
-│                              │
-│                              │
-├──────────────────────────────┤
-│ PROJECT NAME                 │
-│ Category · Year              │
-│ Short description            │
-│                              │
-│ View Project →               │
-└──────────────────────────────┘
-```
-
-Card tidak perlu memiliki shadow berat.
-
-Separation lebih banyak menggunakan:
-
-- whitespace,
-    
-- border,
-    
-- surface contrast,
-    
-- typography.
-    
+Panel hanya berfungsi sebagai **entry point kategori portfolio**.
 
 ---
 
-# 10. Screen: Project Detail
+# 5.5 Project Showcase
 
-## Layout
+Project Showcase merupakan salah satu bagian visual utama website.
+
+### Visual Direction
+
+Menggunakan pendekatan:
+
+* editorial;
+* large imagery;
+* asymmetric layout;
+* generous spacing;
+* typography-driven composition;
+* visual storytelling.
+
+### Interaction
+
+Desktop:
 
 ```text
-Project Hero
-      │
-      ▼
+Scroll ↓
+    │
+    ▼
+Horizontal Project Movement
+```
+
+Pengguna tetap mengontrol perpindahan.
+
+Tidak menggunakan infinite auto-carousel.
+
+### Mobile
+
+Horizontal showcase dipertahankan dengan touch/swipe interaction.
+
+Card dapat menggunakan viewport-relative width sehingga sebagian item berikutnya tetap terlihat sebagai affordance bahwa konten dapat digeser.
+
+---
+
+# 5.6 Project Detail
+
+```text
+┌─────────────────────────────────────┐
+│ Project Hero                        │
+│                                     │
+│ Project Name                        │
+│ Category                            │
+│ Short Description                   │
+└─────────────────────────────────────┘
+
 Project Overview
-      │
-      ▼
+
 Project Information
-      │
-      ▼
-Process / Documentation
-      │
-      ├── Research
-      │
-      ├── Wireframe
-      │
-      └── Other Documentation
-      │
-      ▼
+
+Documentation
+
+Research
+[if available]
+
+Wireframe
+[if available]
+
 Final Design
-      │
-      ▼
-Figma Prototype
-      │
-      ▼
+
+Prototype
+[Embed / Figma Link]
+
 Next Project
 ```
 
-## Project Hero
+### Project Hero
 
 Menampilkan:
 
-- Project title.
-    
-- Category.
-    
-- Short description.
-    
-- Hero visual.
-    
-- Metadata.
-    
+* project title;
+* category;
+* short description;
+* hero visual.
 
-## Project Overview
+### Project Overview
 
-Berisi konteks singkat:
+Berisi informasi singkat mengenai:
 
-- project description,
-    
-- objective,
-    
-- role/team,
-    
-- relevant information.
-    
+* tujuan proyek;
+* konteks;
+* peran kelompok;
+* output.
 
-## Project Information
+### Documentation
 
-Dapat berupa metadata editorial:
+Dokumentasi tidak harus menggunakan struktur yang sama untuk seluruh proyek.
 
-```text
-CATEGORY
-Education
+Section hanya ditampilkan jika data tersedia.
 
-TEAM
-Group UI/UX
+### Prototype
 
-ROLE
-...
+Prototype dapat ditampilkan menggunakan:
 
-YEAR
-2026
-```
+* Figma embed; atau
+* external Figma link.
 
-## Documentation
-
-Dokumentasi fleksibel.
-
-Tidak semua project harus memiliki section yang sama.
-
-CMS harus memungkinkan section tertentu:
-
-- tersedia,
-    
-- tidak tersedia,
-    
-- atau memiliki jumlah konten berbeda.
-    
-
-## Final Design
-
-Visual final harus mendapatkan area display yang besar.
-
-## Figma Prototype
-
-Prototype dapat:
-
-1. di-embed apabila memungkinkan,
-    
-2. atau menyediakan external link ke Figma.
-    
-
-Fallback link wajib tersedia apabila embed tidak dapat digunakan.
+Jika embed tidak dapat digunakan, sistem harus menyediakan fallback link.
 
 ---
 
-# 11. Screen: Design System Preview
+# 5.7 Design System Preview
 
-## Purpose
+Section ini menunjukkan bahwa portfolio memiliki kemampuan membangun sistem desain.
 
-Menunjukkan bagaimana kelompok membangun sistem desain.
+### Content
 
-## Layout
+* Color samples.
+* Typography.
+* Component samples.
+* Visual comparison.
+* Interactive switch/comparison.
+
+### Layout
 
 ```text
 DESIGN SYSTEM
 
-Color       Typography       Components
-────────────────────────────────────────
+[Preview / Comparison]
 
-[Color]     Heading          [Button]
-[Color]     Body             [Card]
-[Color]     Caption          [Input]
+Colors
+Typography
+Components
 ```
 
-Section dapat menggunakan interactive comparison atau switcher.
-
-Preview tidak perlu mereplikasi seluruh design system Figma.
-
-Fungsinya adalah memberikan **overview**.
+Preview bersifat demonstratif dan tidak menggantikan dokumentasi design system yang lebih lengkap jika tersedia.
 
 ---
 
-# 12. Screen: Team
+# 5.8 Team
 
-## Layout
+Team section menggunakan layout editorial yang tidak terlalu card-heavy.
+
+### Content per Member
+
+```text
+Photo
+
+Name
+Role
+```
+
+Foto menjadi elemen visual utama.
+
+### Responsive
 
 Desktop:
 
 ```text
-                 THE TEAM
+[Member] [Member] [Member] [Member]
+```
 
-     ┌────────┐   ┌────────┐   ┌────────┐
-     │  Foto  │   │  Foto  │   │  Foto  │
-     └────────┘   └────────┘   └────────┘
+Tablet:
 
-       Name          Name          Name
-       Role          Role          Role
+```text
+[Member] [Member]
+[Member] [Member]
 ```
 
 Mobile:
 
 ```text
-┌───────────────────┐
-│       Foto        │
-│       Name        │
-│       Role        │
-└───────────────────┘
-
-┌───────────────────┐
-│       Foto        │
-│       Name        │
-│       Role        │
-└───────────────────┘
+[Member]
+[Member]
+[Member]
 ```
 
-Data:
-
-- Name
-    
-- Photo
-    
-- Role
-    
-
-Semua data dapat dikelola melalui CMS.
+Jumlah kolom mengikuti available width.
 
 ---
 
-# 13. Screen: Weekly Assignment Archive
+# 5.9 Weekly Assignment Archive
 
-## Purpose
+Archive menggunakan tabel karena tujuan utamanya adalah scanning informasi.
 
-Mendokumentasikan tugas mingguan selama perkuliahan.
+### Example
 
-## Desktop
+| Week | Assignment | Description | Project |
+| ---- | ---------- | ----------- | ------- |
+| 01   | ...        | ...         | ...     |
+| 02   | ...        | ...         | ...     |
+| 03   | ...        | ...         | ...     |
 
-```text
-WEEKLY ASSIGNMENT ARCHIVE
+### Responsive Behavior
 
-┌──────┬───────────────────────┬──────────────┐
-│ Week │ Assignment            │ Status       │
-├──────┼───────────────────────┼──────────────┤
-│ 01   │ Introduction UI/UX    │ Completed    │
-│ 02   │ User Research         │ Completed    │
-│ 03   │ Wireframe             │ Completed    │
-│ ...  │ ...                   │ ...          │
-└──────┴───────────────────────┴──────────────┘
-```
+Desktop:
 
-Pada mobile, tabel dapat berubah menjadi stacked rows/cards untuk menghindari horizontal overflow.
+Full table.
 
----
+Mobile:
 
-# 14. Component List
+Tabel dapat berubah menjadi stacked row/card atau horizontal scroll terkontrol.
 
-## 14.1 Layout Components
-
-- `Navbar`
-    
-- `MobileNavigation`
-    
-- `Footer`
-    
-- `Section`
-    
-- `Container`
-    
-- `PageTransition`
-    
-
-## 14.2 Hero Components
-
-- `WelcomeHero`
-    
-- `SplitHero`
-    
-- `HeroPanel`
-    
-- `HeroMeta`
-    
-
-## 14.3 Project Components
-
-- `ProjectShowcase`
-    
-- `ProjectCard`
-    
-- `ProjectPreview`
-    
-- `ProjectMeta`
-    
-- `ProjectHero`
-    
-- `ProjectOverview`
-    
-- `ProjectInfo`
-    
-- `ProjectSection`
-    
-- `ProjectGallery`
-    
-- `PrototypeEmbed`
-    
-- `ProjectNavigation`
-    
-
-## 14.4 Design System Components
-
-- `DesignSystemPreview`
-    
-- `ThemeSwitcher`
-    
-- `ColorSwatch`
-    
-- `TypePreview`
-    
-- `ComponentPreview`
-    
-
-## 14.5 Team Components
-
-- `TeamSection`
-    
-- `TeamGrid`
-    
-- `TeamMemberCard`
-    
-
-## 14.6 Archive Components
-
-- `AssignmentArchive`
-    
-- `AssignmentTable`
-    
-- `AssignmentRow`
-    
-
-## 14.7 UI Components
-
-- `Button`
-    
-- `Link`
-    
-- `Badge`
-    
-- `IconButton`
-    
-- `Divider`
-    
-- `Tooltip`
-    
-- `Modal`
-    
-- `Skeleton`
-    
-- `Toast`
-    
-
-## 14.8 State Components
-
-- `LoadingState`
-    
-- `EmptyState`
-    
-- `ErrorState`
-    
-- `SuccessState`
-    
+Tidak memaksakan tabel desktop ke layar mobile hingga teks menjadi mikroskopis.
 
 ---
 
-# 15. Design Tokens
+# 5.10 Footer
 
-## 15.1 Color System
+Footer berisi:
 
-Synapse memiliki visual identity sendiri.
+* Synapse identity.
+* Navigation.
+* Copyright.
+* Relevant external links jika diperlukan.
 
-Warna domain Pendidikan dan Industri **tidak digunakan sebagai global website theme**.
+Footer tidak perlu menjadi area dekoratif yang berat.
+
+---
+
+# 6. Component List
+
+## 6.1 Global Components
+
+* `Navbar`
+* `ThemeToggle`
+* `Footer`
+* `SectionHeading`
+* `Container`
+* `ResponsiveImage`
+* `Link`
+* `Button`
+
+---
+
+## 6.2 Home Components
+
+* `WelcomeSection`
+* `SplitViewHero`
+* `ProjectShowcase`
+* `ProjectShowcaseItem`
+* `DesignSystemPreview`
+* `TeamSection`
+* `TeamMember`
+* `AssignmentArchive`
+
+---
+
+## 6.3 Project Components
+
+* `ProjectHero`
+* `ProjectMeta`
+* `ProjectOverview`
+* `ProjectDocumentation`
+* `ResearchSection`
+* `WireframeSection`
+* `FinalDesignSection`
+* `PrototypeEmbed`
+* `PrototypeFallback`
+* `NextProjectNavigation`
+
+---
+
+## 6.4 CMS Components
+
+Content is managed through Sanity Studio.
+
+Content schemas should include at minimum:
+
+* `project`
+* `teamMember`
+* `weeklyAssignment`
+
+Additional schemas may be created only when justified by content requirements.
+
+---
+
+## 6.5 State Components
+
+* `LoadingState`
+* `EmptyState`
+* `ErrorState`
+* `SuccessFeedback`
+* `Skeleton`
+* `RetryButton`
+
+---
+
+# 7. Design Tokens
+
+# 7.1 Brand Colors
+
+Synapse menggunakan visual identity independen dari kategori Pendidikan dan Industri.
 
 ### Light Theme
 
-|Token|Value|Usage|
-|---|---|---|
-|`--color-primary`|`#A8C6E7`|Primary interface accent|
-|`--color-primary-strong`|`#7FA8D6`|Strong accent / interaction|
-|`--color-accent`|`#FFE08A`|Accent|
-|`--color-highlight`|`#FFF2B2`|Highlight|
-|`--color-surface-soft`|`#FFF7D6`|Soft surface|
-|`--color-background`|`#FFFDF4`|Main background|
-|`--color-text`|`#1C2430`|Primary text|
-|`--color-text-muted`|`#5F6875`|Secondary text|
-|`--color-border`|`#D9DEE5`|Border/divider|
+| Token                    | Value     | Usage                |
+| ------------------------ | --------- | -------------------- |
+| `--color-background`     | `#FFF8E7` | Main background      |
+| `--color-primary`        | `#930500` | Primary brand/accent |
+| `--color-secondary`      | `#95BBEA` | Secondary accent     |
+| `--color-text-primary`   | `#1A1A1A` | Primary text         |
+| `--color-text-secondary` | `#5C5C5C` | Secondary text       |
+| `--color-surface`        | `#FFFDF7` | Elevated surface     |
+| `--color-border`         | `#DED8C9` | Borders/dividers     |
 
 ### Dark Theme
 
-Dark theme menggunakan interpretasi dari visual identity light theme, bukan sekadar membalik seluruh warna.
+Dark theme menggunakan turunan visual yang tetap mempertahankan karakter Synapse.
 
-|Token|Value|Usage|
-|---|---|---|
-|`--color-background`|`#11161D`|Main background|
-|`--color-surface`|`#18212B`|Surface|
-|`--color-surface-soft`|`#222D39`|Secondary surface|
-|`--color-primary`|`#A8C6E7`|Primary accent|
-|`--color-primary-strong`|`#7FA8D6`|Strong accent|
-|`--color-accent`|`#FFE08A`|Accent|
-|`--color-highlight`|`#FFF2B2`|Highlight|
-|`--color-text`|`#F5F7FA`|Primary text|
-|`--color-text-muted`|`#AEB8C4`|Secondary text|
-|`--color-border`|`#34404D`|Border/divider|
+| Token                         | Value     | Usage            |
+| ----------------------------- | --------- | ---------------- |
+| `--color-background-dark`     | `#11110F` | Main background  |
+| `--color-primary-dark`        | `#FF6B63` | Primary accent   |
+| `--color-secondary-dark`      | `#95BBEA` | Secondary accent |
+| `--color-text-primary-dark`   | `#F8F4EA` | Primary text     |
+| `--color-text-secondary-dark` | `#BDB8AD` | Secondary text   |
+| `--color-surface-dark`        | `#1B1B18` | Elevated surface |
+| `--color-border-dark`         | `#34342F` | Borders/dividers |
 
-### Color Rules
+Dark palette bersifat provisional dan dapat disesuaikan setelah visual testing.
 
-- Tidak menggunakan gradient.
-    
-- Jangan menggunakan seluruh accent colors sekaligus dalam satu section.
-    
-- Accent digunakan secara intentional.
-    
-- Text/background contrast harus memenuhi WCAG 2.1 AA.
-    
-- Warna tidak boleh menjadi satu-satunya indikator status.
-    
+### No Gradient Rule
+
+Synapse **tidak menggunakan gradient** sebagai bagian dari design system.
+
+Gunakan:
+
+* solid color;
+* contrast;
+* whitespace;
+* typography;
+* image composition;
+* borders;
+* controlled shadows.
 
 ---
 
-# 16. Typography
+# 7.2 Typography
 
-Primary font family:
+Typography menggunakan sistem yang sederhana dan editorial.
+
+### Primary Font
 
 **Plus Jakarta Sans**
 
-Fallback:
+Digunakan sebagai primary typeface untuk:
+
+* heading;
+* body;
+* navigation;
+* metadata;
+* UI.
+
+### Type Scale
+
+| Token        | Size | Suggested Use             |
+| ------------ | ---: | ------------------------- |
+| `display-xl` | 96px | Hero / major title        |
+| `display-lg` | 72px | Large section heading     |
+| `display-md` | 56px | Project heading           |
+| `heading-xl` | 48px | Major heading             |
+| `heading-lg` | 40px | Section heading           |
+| `heading-md` | 32px | Subsection                |
+| `heading-sm` | 24px | Card/project title        |
+| `body-lg`    | 20px | Introductory text         |
+| `body-md`    | 16px | Default body              |
+| `body-sm`    | 14px | Metadata                  |
+| `caption`    | 12px | Caption / supporting text |
+
+### Responsive Type
+
+Display sizes should scale down on smaller screens.
+
+Example:
 
 ```text
-Plus Jakarta Sans,
-Inter,
-system-ui,
-sans-serif
+Desktop:
+96px
+
+Tablet:
+72px
+
+Mobile:
+48px
 ```
 
-Typography harus terasa modern, bersih, dan nyaman untuk konten editorial.
-
-## Type Scale
-
-|Token|Size|Line Height|Weight|
-|---|--:|--:|--:|
-|`display-xl`|96px|0.95|600|
-|`display-lg`|72px|1.0|600|
-|`display-md`|56px|1.05|600|
-|`heading-xl`|40px|1.1|600|
-|`heading-lg`|32px|1.15|600|
-|`heading-md`|24px|1.2|600|
-|`heading-sm`|20px|1.3|600|
-|`body-lg`|18px|1.6|400|
-|`body-md`|16px|1.6|400|
-|`body-sm`|14px|1.5|400|
-|`caption`|12px|1.4|500|
-|`micro`|11px|1.3|500|
-
-Display typography dapat menggunakan responsive scaling.
+Actual values may be implemented using fluid typography such as `clamp()`.
 
 ---
 
-# 17. Spacing Tokens
+# 7.3 Font Weight
 
-Base spacing: **4px**
+| Token      | Weight |
+| ---------- | -----: |
+| `regular`  |    400 |
+| `medium`   |    500 |
+| `semibold` |    600 |
+| `bold`     |    700 |
 
-|Token|Value|
-|---|--:|
-|`space-1`|4px|
-|`space-2`|8px|
-|`space-3`|12px|
-|`space-4`|16px|
-|`space-5`|20px|
-|`space-6`|24px|
-|`space-8`|32px|
-|`space-10`|40px|
-|`space-12`|48px|
-|`space-16`|64px|
-|`space-20`|80px|
-|`space-24`|96px|
-|`space-32`|128px|
-|`space-40`|160px|
-
-Large editorial sections dapat menggunakan spacing:
-
-`96px – 160px`
-
-atau lebih apabila diperlukan untuk mempertahankan negative space.
+Avoid excessive use of bold typography.
 
 ---
 
-# 18. Container & Grid
+# 7.4 Spacing
 
-## Desktop
+Base spacing unit:
 
-Maximum content width:
+**4px**
 
-```text
-1280px
-```
+| Token      | Value |
+| ---------- | ----: |
+| `space-1`  |   4px |
+| `space-2`  |   8px |
+| `space-3`  |  12px |
+| `space-4`  |  16px |
+| `space-5`  |  20px |
+| `space-6`  |  24px |
+| `space-8`  |  32px |
+| `space-10` |  40px |
+| `space-12` |  48px |
+| `space-16` |  64px |
+| `space-20` |  80px |
+| `space-24` |  96px |
+| `space-32` | 128px |
+| `space-40` | 160px |
+| `space-48` | 192px |
 
-Grid:
-
-```text
-12 columns
-24px gutter
-```
-
-Content dapat menggunakan full-width visual ketika dibutuhkan.
-
-## Tablet
-
-```text
-8 columns
-20px gutter
-```
-
-## Mobile
-
-```text
-4 columns
-16px side padding
-16px gutter
-```
-
-Project imagery dapat menggunakan full-bleed treatment pada mobile apabila diperlukan.
+Large spacing should be intentionally used around major sections.
 
 ---
 
-# 19. Border & Radius
+# 7.5 Layout
 
-Synapse menggunakan radius yang restrained.
+### Container
 
-|Token|Value|
-|---|--:|
-|`radius-sm`|4px|
-|`radius-md`|8px|
-|`radius-lg`|12px|
-|`radius-xl`|16px|
-|`radius-pill`|999px|
+Recommended maximum content width:
 
-Default component radius:
+```text
+1440px
+```
 
-**8px – 12px**
+with responsive horizontal padding.
 
-Pill digunakan terutama untuk:
+### Section Spacing
 
-- tags,
-    
-- metadata,
-    
-- filters,
-    
-- compact controls.
-    
+Major sections should generally use generous vertical spacing:
+
+```text
+Desktop:
+120–200px
+
+Tablet:
+96–144px
+
+Mobile:
+72–112px
+```
+
+Values are guidelines rather than rigid requirements.
 
 ---
 
-# 20. Borders & Shadows
+# 7.6 Border Radius
 
-## Borders
+Synapse uses a restrained radius system.
 
-Default:
+| Token         | Value |
+| ------------- | ----: |
+| `radius-sm`   |   4px |
+| `radius-md`   |   8px |
+| `radius-lg`   |  16px |
+| `radius-xl`   |  24px |
+| `radius-pill` | 999px |
 
-```text
-1px solid
-```
+Rounded corners should be used selectively.
 
-Border digunakan untuk:
-
-- cards,
-    
-- tables,
-    
-- separators,
-    
-- interactive states.
-    
-
-## Shadows
-
-Shadow harus subtle.
-
-Default elevation sebaiknya berasal dari:
-
-1. whitespace,
-    
-2. surface contrast,
-    
-3. border.
-    
-
-Shadow digunakan hanya ketika diperlukan untuk hierarchy atau floating elements.
-
-Tidak menggunakan heavy/drop shadow sebagai default card style.
+Do not make every element rounded.
 
 ---
 
-# 21. Motion
+# 7.7 Shadows
 
-Motion direction:
+Shadows are subtle.
 
-**Subtle / Editorial**
+Preferred usage:
 
-## Default Duration
+* elevated navigation;
+* interactive overlay;
+* modal/dialog;
+* selected surface.
 
-|Motion|Duration|
-|---|--:|
-|Micro interaction|120–180ms|
-|Button / hover|180–220ms|
-|Component transition|250–350ms|
-|Section transition|350–500ms|
-|Hero transition|500–700ms|
-
-## Easing
-
-Default:
-
-```text
-ease-out
-```
-
-Untuk complex movement:
-
-```text
-cubic-bezier(...)
-```
-
-Gunakan easing secara konsisten dan hindari animasi yang terasa elastic berlebihan.
+Avoid strong generic card shadows.
 
 ---
 
-# 22. Motion Patterns
+# 8. Motion & Interaction
 
-## Hover
+## 8.1 Motion Principles
 
-- opacity change,
-    
-- subtle scale,
-    
-- image crop movement,
-    
-- underline,
-    
-- color transition.
-    
+Motion should feel:
 
-## Project Card
+* smooth;
+* controlled;
+* intentional;
+* editorial.
 
-Image dapat bergerak sedikit ketika hover.
+### Standard Duration
+
+| Type               |  Duration |
+| ------------------ | --------: |
+| Micro interaction  | 150–200ms |
+| UI transition      | 200–300ms |
+| Section transition | 300–500ms |
+| Hero interaction   | 400–700ms |
+
+---
+
+## 8.2 Hero Motion
+
+Split-View Hero may use:
+
+* panel expansion;
+* subtle image movement;
+* typography translation;
+* opacity changes.
+
+Motion should not make content difficult to access.
+
+---
+
+## 8.3 Scroll Motion
+
+Allowed:
+
+* reveal-on-scroll;
+* subtle translation;
+* scale;
+* horizontal project movement;
+* parallax ringan.
+
+Avoid:
+
+* excessive zoom;
+* continuous looping animation;
+* motion that blocks scrolling;
+* forced animation sequences.
+
+---
+
+## 8.4 Reduced Motion
+
+When `prefers-reduced-motion: reduce` is enabled:
+
+* disable non-essential animation;
+* reduce transform movement;
+* avoid parallax;
+* maintain content accessibility;
+* retain functional interaction.
+
+---
+
+# 9. Responsive Design
+
+## Breakpoints
+
+Recommended breakpoints:
+
+```text
+Mobile:
+< 768px
+
+Tablet:
+768px – 1023px
+
+Desktop:
+≥ 1024px
+```
+
+Additional breakpoints may be introduced when content requires them.
+
+---
+
+## Responsive Rules
+
+### Navigation
+
+Desktop:
+
+```text
+Logo | Projects | Design System | Team | Archive | Theme
+```
+
+Mobile:
+
+```text
+Logo | Menu | Theme
+```
+
+---
+
+### Split View
+
+Desktop:
+
+Two-column split.
+
+Mobile:
+
+Two vertically stacked panels or touch-friendly equivalent.
+
+---
+
+### Project Showcase
+
+Desktop:
+
+Horizontal scroll experience.
+
+Mobile:
+
+Touch-based horizontal scrolling remains supported.
+
+---
+
+### Team
+
+Desktop:
+
+Multi-column editorial grid.
+
+Mobile:
+
+Single-column or compact grid.
+
+---
+
+### Archive
+
+Desktop:
+
+Full table.
+
+Mobile:
+
+Horizontal scroll or stacked responsive representation.
+
+---
+
+# 10. UI States
+
+# 10.1 Loading State
+
+Loading state digunakan ketika data CMS atau project sedang dimuat.
+
+### Pattern
+
+Gunakan:
+
+* skeleton;
+* placeholder block;
+* subtle opacity animation.
+
+Hindari spinner besar yang memenuhi layar apabila loading dapat dilakukan secara progressive.
+
+Example:
+
+```text
+┌──────────────────────────────┐
+│ ███████████████████          │
+│ ███████████                  │
+│                              │
+│ █████████████████████████    │
+└──────────────────────────────┘
+```
+
+---
+
+# 10.2 Empty State
+
+Digunakan ketika data yang valid belum tersedia.
+
+### Pattern
+
+```text
+[Simple visual]
+
+Belum ada karya yang tersedia.
+
+Content untuk section ini belum ditambahkan.
+```
+
+Jika relevan, admin dapat diberikan CTA menuju CMS.
+
+Empty state tidak menggunakan ilustrasi kompleks yang mengalihkan perhatian dari pesan utama.
+
+---
+
+# 10.3 Error State
+
+Error state harus:
+
+1. menjelaskan bahwa terjadi masalah;
+2. menggunakan bahasa yang mudah dipahami;
+3. menyediakan tindakan yang relevan.
+
+Example:
+
+```text
+Konten tidak dapat dimuat.
+
+Silakan coba lagi.
+
+[ Coba Lagi ]
+```
+
+Error teknis internal tidak ditampilkan secara mentah kepada pengguna publik.
+
+---
+
+# 10.4 Success State
+
+Digunakan terutama pada area admin/CMS atau interaction yang membutuhkan confirmation.
+
+Example:
+
+```text
+✓ Perubahan berhasil disimpan.
+```
+
+Success feedback harus:
+
+* singkat;
+* jelas;
+* tidak menghalangi workflow.
+
+---
+
+# 11. Accessibility Notes
+
+Synapse menargetkan **WCAG 2.1 Level AA**.
+
+## 11.1 Color Contrast
+
+Semua kombinasi foreground/background harus memenuhi contrast requirement yang relevan.
+
+Jangan menggunakan warna sebagai satu-satunya indikator informasi.
 
 Contoh:
 
 ```text
-scale: 1.02
+Status
+✓ Success
+✕ Error
 ```
 
-Bukan:
+bukan hanya:
 
 ```text
-scale: 1.15
-```
-
-Tujuannya menjaga kesan editorial, bukan membuat gambar melakukan senam aerobik.
-
-## Hero
-
-Split-view dapat menggunakan:
-
-- subtle width transition,
-    
-- text movement,
-    
-- image scale,
-    
-- opacity.
-    
-
-## Scroll
-
-Scroll-linked animation digunakan secara terbatas.
-
-Tidak semua section perlu dianimasikan.
-
----
-
-# 23. Reduced Motion
-
-Jika:
-
-```text
-prefers-reduced-motion: reduce
-```
-
-maka:
-
-- disable parallax,
-    
-- reduce transform,
-    
-- remove non-essential transitions,
-    
-- tidak melakukan auto-animation,
-    
-- tetap mempertahankan informasi dan hierarchy.
-    
-
----
-
-# 24. Component States
-
-## 24.1 Loading State
-
-Default:
-
-**Skeleton**
-
-Contoh:
-
-```text
-┌──────────────────────────┐
-│ ███████████████████      │
-│ ███████████              │
-│                          │
-│ █████████████████        │
-└──────────────────────────┘
-```
-
-Rules:
-
-- Tidak menggunakan spinner sebagai satu-satunya loading indicator untuk content-heavy page.
-    
-- Skeleton harus memiliki bentuk yang mendekati konten sebenarnya.
-    
-- Loading tidak boleh menyebabkan layout shift besar.
-    
-
----
-
-# 25. Empty State
-
-Empty state digunakan ketika CMS belum memiliki data.
-
-```text
-┌────────────────────────────┐
-│                            │
-│       No projects yet      │
-│                            │
-│  Project content will      │
-│  appear here when added.   │
-│                            │
-└────────────────────────────┘
-```
-
-Untuk public website:
-
-- jangan menampilkan error teknis,
-    
-- gunakan copy yang ramah,
-    
-- tidak perlu CTA admin.
-    
-
-Untuk CMS/admin:
-
-- dapat menyediakan CTA menuju create content.
-    
-
----
-
-# 26. Error State
-
-```text
-┌────────────────────────────┐
-│                            │
-│    Something went wrong    │
-│                            │
-│  We couldn't load this     │
-│  content right now.        │
-│                            │
-│        Try again            │
-│                            │
-└────────────────────────────┘
-```
-
-Rules:
-
-- jelaskan masalah dengan bahasa manusia,
-    
-- jangan expose stack trace,
-    
-- sediakan retry ketika memungkinkan,
-    
-- gunakan error logging di sisi sistem.
-    
-
----
-
-# 27. Success State
-
-Success state digunakan terutama pada interaction yang membutuhkan confirmation.
-
-Contoh:
-
-```text
-✓ Changes saved
-```
-
-atau:
-
-```text
-✓ Theme updated
-```
-
-Success feedback dapat menggunakan:
-
-- inline confirmation,
-    
-- toast,
-    
-- status indicator.
-    
-
-Jangan bergantung hanya pada warna hijau.
-
----
-
-# 28. Not Found State
-
-Untuk project slug yang tidak tersedia:
-
-```text
-404
-
-This project doesn't exist.
-
-Back to projects →
-```
-
-Harus tersedia navigation kembali ke homepage/project showcase.
-
----
-
-# 29. Accessibility Notes
-
-## 29.1 Color Contrast
-
-Target:
-
-**WCAG 2.1 AA**
-
-Semua text utama harus memiliki contrast ratio yang sesuai.
-
-Accent color tidak boleh digunakan sebagai text utama jika contrast tidak mencukupi.
-
----
-
-## 29.2 Keyboard Navigation
-
-Semua interactive elements harus dapat diakses menggunakan keyboard:
-
-- links,
-    
-- buttons,
-    
-- theme toggle,
-    
-- project cards,
-    
-- navigation,
-    
-- menus,
-    
-- embedded prototype controls apabila memungkinkan.
-    
-
-Focus state harus terlihat jelas.
-
----
-
-## 29.3 Focus State
-
-Jangan menghapus default focus indicator tanpa menyediakan replacement.
-
-Contoh:
-
-```text
-outline: 2px solid primary;
-outline-offset: 3px;
+Green
+Red
 ```
 
 ---
 
-## 29.4 Semantic HTML
+## 11.2 Keyboard Navigation
+
+Seluruh fungsi penting harus dapat diakses menggunakan keyboard.
+
+Focus state harus:
+
+* terlihat;
+* memiliki contrast yang cukup;
+* tidak tertutup oleh sticky navigation.
+
+---
+
+## 11.3 Semantic HTML
 
 Gunakan semantic elements:
 
@@ -1403,7 +1188,9 @@ Gunakan semantic elements:
 <footer>
 ```
 
-Heading hierarchy harus logis:
+Heading hierarchy harus konsisten.
+
+Contoh:
 
 ```text
 H1
@@ -1413,446 +1200,217 @@ H1
  └── H2
 ```
 
-Jangan memilih heading berdasarkan ukuran visual saja.
-
 ---
 
-## 29.5 Images
+## 11.4 Images
 
-Semua gambar informatif harus memiliki alt text.
+Semua gambar informatif harus memiliki alternative text yang sesuai.
 
-Gambar dekoratif menggunakan:
+Gambar dekoratif dapat menggunakan empty alt:
 
-```text
+```html
 alt=""
 ```
 
-Hero/project imagery harus memiliki alternative text yang menjelaskan konteks visual jika diperlukan.
+Jangan menggunakan filename sebagai alt text.
 
 ---
 
-## 29.6 Motion Accessibility
+## 11.5 Interactive Elements
 
-Respect:
+Button harus digunakan untuk action.
+
+Link digunakan untuk navigation.
+
+Jangan membuat:
+
+```html
+<div onclick="...">
+```
+
+sebagai pengganti button apabila elemen tersebut merupakan kontrol interaktif.
+
+---
+
+## 11.6 Touch Targets
+
+Interactive elements pada mobile harus memiliki ukuran touch target yang memadai.
+
+Target minimum:
+
+**44 × 44px**
+
+---
+
+## 11.7 Motion Accessibility
+
+Website harus menghormati:
 
 ```text
 prefers-reduced-motion
 ```
 
-Motion tidak boleh menjadi satu-satunya cara untuk memahami:
-
-- navigasi,
-    
-- status,
-    
-- hierarchy,
-    
-- atau perubahan konten.
-    
+Pengguna tidak boleh kehilangan akses terhadap konten hanya karena animation dinonaktifkan.
 
 ---
 
-## 29.7 Touch Targets
+## 11.8 Figma Prototype Accessibility
 
-Interactive elements harus memiliki area interaksi yang cukup untuk perangkat touch.
+Prototype embed harus memiliki fallback.
 
-Target minimum yang digunakan sebagai guideline:
+Jika embed gagal:
 
 ```text
-44 × 44px
+Prototype tidak dapat ditampilkan.
+
+[Buka Prototype di Figma]
 ```
 
----
-
-## 29.8 Horizontal Showcase Accessibility
-
-Horizontal project showcase tidak boleh hanya dapat digunakan melalui mouse wheel.
-
-Harus tersedia:
-
-- touch/swipe,
-    
-- keyboard-accessible controls,
-    
-- visible project links.
-    
-
-Jika horizontal scroll tidak dapat digunakan pada kondisi tertentu, konten harus tetap dapat diakses melalui alternatif navigasi.
+Dengan demikian reviewer tetap dapat mengakses prototype.
 
 ---
 
-## 29.9 Prototype Accessibility
+## 11.9 Dark Mode Accessibility
 
-Figma prototype embed harus memiliki fallback external link.
+Dark mode harus mempertahankan:
 
-Contoh:
+* readable text;
+* sufficient contrast;
+* visible focus;
+* distinguishable borders;
+* accessible interactive states.
+
+Dark mode tidak boleh sekadar membalik warna secara otomatis.
+
+---
+
+# 12. Content Design Rules
+
+## 12.1 Copy
+
+Copy harus:
+
+* singkat;
+* informatif;
+* tidak berlebihan;
+* mudah dipindai.
+
+---
+
+## 12.2 Project Titles
+
+Judul proyek harus menjadi visual anchor.
+
+Hindari judul terlalu panjang dalam display typography.
+
+---
+
+## 12.3 Metadata
+
+Metadata dapat digunakan untuk informasi seperti:
 
 ```text
-Interactive Prototype
-
-[Open Prototype in Figma ↗]
+Category
+Year
+Role
+Tools
 ```
 
-Dengan demikian reviewer tetap dapat mengakses prototype apabila embed gagal dimuat.
+Metadata menggunakan typography yang lebih kecil daripada title dan body.
 
 ---
 
-## 29.10 Tables
+# 13. Design System Organization
 
-Weekly Assignment Archive harus menggunakan semantic table markup pada desktop apabila tetap berbentuk tabel.
-
-Header harus dapat dipahami oleh screen reader.
-
-Pada mobile, perubahan menjadi card/stacked layout tidak boleh menghilangkan hubungan antara:
-
-- minggu,
-    
-- tugas,
-    
-- status,
-    
-- informasi lainnya.
-    
-
----
-
-# 30. Responsive Rules
-
-## Mobile
-
-Prioritas:
-
-1. Content
-    
-2. Navigation
-    
-3. Readability
-    
-4. Touch interaction
-    
-
-Hero dan project visual dapat menggunakan full-width layout.
-
-Horizontal showcase harus mendukung touch swipe.
-
----
-
-## Tablet
-
-Menggunakan layout intermediate.
-
-Hindari sekadar memperbesar layout mobile.
-
-Grid dapat berubah dari:
+Design system dapat dikelola dalam Figma dengan struktur:
 
 ```text
-12 columns
+00 - Guidelines
+01 - Pendidikan
+02 - Industri
+03 - Portofolio
 ```
 
-menjadi:
+Synapse website menggunakan halaman `03 - Portofolio` sebagai referensi visual untuk identitas website.
 
-```text
-8 columns
-```
+Figma dapat menggunakan:
+
+* semantic color variables;
+* typography styles;
+* spacing variables;
+* reusable components;
+* component playground.
+
+Struktur tersebut mengikuti fondasi dokumentasi Figma yang telah ditentukan sebelumnya.
 
 ---
 
-## Desktop
+# 14. Design Constraints
 
-Desktop menjadi environment utama untuk review akademik.
+Ketentuan berikut bersifat wajib:
 
-Gunakan:
-
-- whitespace luas,
-    
-- large typography,
-    
-- wide project imagery,
-    
-- editorial grid,
-    
-- horizontal showcase.
-    
-
----
-
-# 31. Theme Rules
-
-## Light Mode
-
-Light mode adalah default visual utama.
-
-Karakter:
-
-- warm,
-    
-- soft,
-    
-- bright,
-    
-- editorial.
-    
-
-Primary background menggunakan tone putih hangat.
-
-Accent berasal dari:
-
-- pale yellow,
-    
-- soft blue,
-    
-- warm cream.
-    
-
-## Dark Mode
-
-Dark mode mempertahankan identitas Synapse dengan:
-
-- deep blue-gray background,
-    
-- blue accent,
-    
-- warm yellow highlight.
-    
-
-Dark mode bukan inversion otomatis dari light mode.
-
-Setiap semantic color harus memiliki dark-theme counterpart.
+1. Tidak menggunakan gradient.
+2. Synapse memiliki visual identity sendiri.
+3. Visual Pendidikan dan Industri tidak digunakan sebagai visual identity utama website.
+4. Whitespace merupakan bagian penting dari layout.
+5. Tidak menggunakan autoplay infinite carousel.
+6. Horizontal project showcase harus tetap dapat dikontrol pengguna.
+7. Dark mode dan light mode wajib tersedia.
+8. Website harus responsive.
+9. Website menargetkan WCAG 2.1 AA.
+10. Animation tidak boleh mengganggu usability.
+11. CMS menggunakan Sanity.
+12. Admin content management dilakukan melalui Sanity Studio.
+13. Project detail harus mendukung Figma embed atau external link.
+14. Tidak semua project diwajibkan memiliki struktur case study yang identik.
+15. Komponen dan visual treatment harus konsisten dengan design tokens.
 
 ---
 
-# 32. Design System Naming
+# 15. Design Quality Checklist
 
-Semantic naming harus digunakan pada implementasi.
+Sebelum sebuah screen dianggap selesai, periksa:
 
-Gunakan:
+### Visual
 
-```text
-color-primary
-color-accent
-color-background
-color-surface
-color-text
-color-text-muted
-color-border
-```
-
-Hindari penggunaan nama:
-
-```text
-blue-1
-yellow-2
-cream-3
-```
-
-untuk component-level styling.
-
-Tujuannya agar design token tetap mudah dipelihara ketika visual identity berubah.
-
----
-
-# 33. CMS Content Model
-
-Karena CMS menggunakan Sanity, desain interface harus mempertimbangkan content yang bersifat dinamis.
-
-Minimal content model:
-
-```text
-Project
-├── title
-├── slug
-├── category
-├── year
-├── description
-├── hero image
-├── overview
-├── documentation
-├── research
-├── wireframe
-├── final design
-└── prototype URL/embed
-```
-
-### Team Member
-
-```text
-Team Member
-├── name
-├── photo
-└── role
-```
-
-### Weekly Assignment
-
-```text
-Weekly Assignment
-├── week
-├── title
-├── description
-├── status
-└── related project
-```
-
-Struktur final dapat berkembang mengikuti kebutuhan konten.
-
----
-
-# 34. Content Rendering Rules
-
-CMS content tidak boleh diasumsikan selalu tersedia.
-
-Setiap optional content harus memiliki conditional rendering.
-
-Contoh:
-
-```text
-IF research exists
-→ render Research section
-
-IF wireframe exists
-→ render Wireframe section
-
-IF prototype exists
-→ render Prototype section
-```
-
-Jangan menghasilkan heading kosong atau section kosong.
-
----
-
-# 35. Visual Hierarchy Rules
-
-Prioritas hierarchy:
-
-```text
-1. Project / Page Title
-2. Primary Visual
-3. Section Heading
-4. Supporting Information
-5. Metadata
-6. Secondary Action
-```
-
-Primary action harus mudah dibedakan dari secondary action.
-
-Jangan membuat seluruh elemen terlihat seperti CTA.
-
----
-
-# 36. Anti-Patterns
-
-Hal-hal berikut harus dihindari:
-
-- Gradient.
-    
-- Excessive glassmorphism.
-    
-- Heavy drop shadows.
-    
-- Excessive rounded cards.
-    
-- Autoplay carousel.
-    
-- Excessive parallax.
-    
-- Excessive animation.
-    
-- Decorative animation yang mengganggu reading.
-    
-- Text terlalu kecil.
-    
-- Semua section menggunakan card.
-    
-- Semua elemen menggunakan accent color.
-    
-- Horizontal overflow yang tidak disengaja.
-    
-- Scroll hijacking yang mengganggu native navigation.
-    
-- Empty decorative whitespace tanpa tujuan.
-    
-- Lorem ipsum pada production content.
-    
-- Menampilkan technical error kepada user.
-    
-- Menjadikan warna sebagai satu-satunya indikator status.
-    
-
----
-
-# 37. Visual Quality Checklist
-
-Sebelum sebuah screen dianggap selesai:
-
-### Layout
-
--  Hierarchy jelas.
-    
--  Whitespace cukup.
-    
--  Alignment konsisten.
-    
--  Tidak ada accidental overflow.
-    
--  Responsive pada mobile/tablet/desktop.
-    
-
-### Typography
-
--  H1 hanya digunakan untuk primary page title.
-    
--  Body text nyaman dibaca.
-    
--  Line-height sesuai.
-    
--  Metadata tidak terlalu kecil.
-    
-
-### Color
-
--  Tidak menggunakan gradient.
-    
--  Warna mengikuti semantic tokens.
-    
--  Contrast memenuhi WCAG 2.1 AA.
-    
--  Accent digunakan secara terukur.
-    
+* [ ] Tidak ada gradient.
+* [ ] Hierarchy typography jelas.
+* [ ] Whitespace cukup.
+* [ ] Visual tidak terlalu padat.
+* [ ] Brand colors digunakan sesuai semantic role.
+* [ ] Dark/light mode tersedia dan tetap readable.
 
 ### Interaction
 
--  Hover memiliki purpose.
-    
--  Focus state terlihat.
-    
--  Keyboard navigation berfungsi.
-    
--  Touch interaction berfungsi.
-    
--  Reduced-motion diperhatikan.
-    
+* [ ] Semua interaction dapat dipahami.
+* [ ] Horizontal showcase dapat dikontrol pengguna.
+* [ ] Motion tidak berlebihan.
+* [ ] Reduced motion didukung.
+* [ ] Hover bukan satu-satunya cara memahami interaction.
+
+### Responsive
+
+* [ ] Mobile.
+* [ ] Tablet.
+* [ ] Desktop.
+* [ ] Tidak ada unintended horizontal overflow.
+* [ ] Touch interaction dapat digunakan.
+
+### Accessibility
+
+* [ ] WCAG 2.1 AA diperhatikan.
+* [ ] Keyboard navigation.
+* [ ] Visible focus.
+* [ ] Semantic HTML.
+* [ ] Alt text.
+* [ ] Contrast.
+* [ ] Accessible touch target.
 
 ### Content
 
--  Tidak ada empty heading.
-    
--  Image memiliki alt text.
-    
--  Prototype memiliki fallback link.
-    
--  Dynamic CMS content memiliki loading/error/empty state.
-    
-
----
-
-# 38. Design North Star
-
-> **Synapse should feel like an editorial gallery for a body of UI/UX work, not a collection of assignment pages.**
-
-Website harus memberikan kesan:
-
-**Spacious → Curated → Clear → Interactive → Memorable**
-
-Namun tetap mempertahankan tujuan utamanya:
-
-**memudahkan dosen dan reviewer memahami karya, proses, dan perkembangan kelompok.**
+* [ ] Project information jelas.
+* [ ] Prototype dapat diakses.
+* [ ] Empty state tersedia.
+* [ ] Loading state tersedia.
+* [ ] Error state tersedia.
+* [ ] Success feedback tersedia jika diperlukan.

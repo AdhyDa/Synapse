@@ -1,75 +1,72 @@
-## name: synapse-website-development  
-description: >-  
-Builds, modifies, and validates the Synapse group UI/UX portfolio website.  
-Use when the user asks to implement, modify, refactor, style, debug, review,  
-or improve any part of the Synapse website, including Next.js pages,  
-components, responsive layouts, project showcases, project detail pages,  
-dark/light mode, animations, accessibility, Sanity CMS integration,  
-Figma prototype presentation, team profiles, weekly assignment archives,  
-or design-system implementation. Do not use for unrelated websites or  
-isolated coding tasks that do not belong to Synapse.
+# Synapse Portfolio Implementation Skill
 
-# Synapse Website Development Skill
+## 1. Skill Name
 
-## 1. Purpose
+**Synapse Portfolio Implementation**
 
-Your job is to build and maintain the **Synapse** group UI/UX portfolio website consistently with its product requirements, visual system, UX rules, accessibility requirements, and technical architecture.
+---
 
-The website is an academic group portfolio intended primarily for **lecturers and academic reviewers**. It documents UI/UX work, the design process, team contributions, and weekly assignments.
+## 2. Description
 
-Treat the website as an **editorial portfolio**, not as a generic student assignment dashboard.
+Use this skill when building, implementing, modifying, refactoring, or reviewing the **Synapse** website, a group portfolio for documenting UI/UX Design coursework and making the work easy for academic reviewers to explore.
 
-The intended visual character is:
+This skill applies whenever a task involves one or more of the following:
 
-- Editorial
-    
-- Spacious
-    
-- Minimal
-    
-- Contemporary
-    
-- Academic
-    
-- Creative
-    
-- Typography-driven
-    
-- Content-first
-    
-- Subtly interactive
-    
+* Building a new Synapse page or section.
+* Implementing a UI component for Synapse.
+* Modifying an existing Synapse page, component, or interaction.
+* Implementing a project showcase or project detail page.
+* Implementing the Design System Preview section.
+* Implementing the Team section.
+* Implementing the Weekly Assignment Archive.
+* Implementing light/dark mode.
+* Implementing responsive behavior.
+* Connecting portfolio content to Sanity CMS.
+* Implementing Figma prototype embeds or fallback links.
+* Adding or modifying animations and interactions.
+* Fixing a bug while preserving the Synapse design system.
+* Refactoring code that affects Synapse UI or functionality.
+* Reviewing an implementation against the Synapse requirements and design specifications.
+* Adding content-driven functionality that is already defined by `PRD.md` or `DESIGN.md`.
 
-The website must **not use gradients**.
+### Do NOT use this skill for
 
-# 2. Source of Truth
+Do not use this skill when the task is unrelated to Synapse, such as:
 
-Before making implementation decisions, use the project documents in this priority order:
+* Building a completely different website.
+* Creating a generic UI component with no relationship to Synapse.
+* Changing project requirements without updating the appropriate source document.
+* Introducing features that are explicitly outside the v1.0 scope.
+* Replacing Sanity with another CMS without an explicit requirement change.
+* Creating a custom administration dashboard when Sanity Studio already fulfills the administration requirement.
+
+---
+
+# 3. Source of Truth
+
+Before changing code, treat the project documents as the authoritative specification.
+
+Read them in this order:
 
 1. `PRD.md`
-    
-    - Defines WHAT the product must contain and WHY.
-        
-    - Use it for requirements, scope, priorities, personas, user stories, and acceptance criteria.
-        
 2. `DESIGN.md`
-    
-    - Defines HOW the product should look and behave.
-        
-    - Use it for layout, visual hierarchy, components, design tokens, responsive behavior, motion, accessibility, and UI states.
-        
 3. `SKILL.md`
-    
-    - Defines HOW an agent should execute development work.
-        
-    - Use this document for workflow, implementation discipline, validation, and failure recovery.
-        
-4. `AGENTS.md`
-    
-    - Defines repository-level agent rules and project-specific operating constraints.
-        
-    - Follow it whenever it provides a more specific instruction.
-        
+4. `AGENTS.md`, if present
+5. Existing project code and configuration
+6. Existing Sanity schemas/content, if relevant
+
+### Authority hierarchy
+
+When information conflicts, use this priority:
+
+1. Explicit user instruction in the current task.
+2. `PRD.md` for product requirements, scope, users, goals, and functionality.
+3. `DESIGN.md` for visual design, layout, components, interaction, accessibility, and design tokens.
+4. `AGENTS.md` for repository-specific engineering conventions.
+5. `SKILL.md` for implementation workflow and execution rules.
+6. Existing code, only when it does not contradict the documents above.
+
+Never silently invent a requirement to resolve a conflict.
 
 If two documents conflict:
 
@@ -80,1234 +77,1225 @@ If two documents conflict:
 3. Do not silently invent a new product requirement.
     
 4. If the conflict materially changes the implementation, report it before making a destructive change.
-    
-
-Never treat an old implementation as more authoritative than the current `PRD.md` or `DESIGN.md`.
 
 ---
 
-# 3. When to Trigger
+# 4. Synapse Product Context
 
-Trigger this skill when the task involves any of the following:
+Synapse is a group portfolio website for documenting UI/UX Design coursework and presenting the group's work to academic reviewers.
 
-### Website implementation
+The primary user is:
 
-- Build Synapse
-    
-- Create a page
-    
-- Create a component
-    
-- Implement a section
-    
-- Convert a design into code
-    
-- Implement a Figma design
-    
-- Add a project page
-    
-- Add CMS content
-    
-- Add responsive behavior
-    
+> **Dosen / Reviewer Akademik**
 
-### Website modification
+Secondary users include:
 
-- Change the homepage
-    
-- Redesign a section
-    
-- Change colors or typography
-    
-- Change project showcase behavior
-    
-- Modify navigation
-    
-- Add or remove a section
-    
-- Update project detail layout
-    
-- Modify dark/light mode
-    
+* Group members.
+* General visitors.
 
-### UX and interaction
+The website must help visitors:
 
-- Add animations
-    
-- Improve transitions
-    
-- Improve scrolling
-    
-- Improve project exploration
-    
-- Improve responsive UX
-    
-- Improve accessibility
-    
-- Fix keyboard navigation
-    
+* Understand what Synapse is.
+* Explore Education and Industry project categories.
+* Browse portfolio projects.
+* Open detailed project documentation.
+* View available design process documentation.
+* View Figma prototypes.
+* Understand the team and each member's role.
+* Browse the weekly assignment archive.
+* Switch between light and dark themes.
 
-### Technical work
-
-- Integrate Sanity
-    
-- Modify content schemas
-    
-- Refactor Synapse components
-    
-- Fix frontend bugs
-    
-- Optimize assets
-    
-- Fix responsive bugs
-    
-- Fix hydration/rendering issues
-    
-- Improve loading/error/empty states
-    
-
-### Quality work
-
-- Review Synapse implementation
-    
-- Audit the website against `PRD.md`
-    
-- Audit the website against `DESIGN.md`
-    
-- Check accessibility
-    
-- Check responsive behavior
-    
-- Check visual consistency
-    
-- Validate a completed feature
-    
-
-Do **not** trigger this skill for:
-
-- unrelated websites
-    
-- generic programming questions
-    
-- isolated algorithm exercises
-    
-- unrelated Next.js projects
-    
-- generic UI examples with no relationship to Synapse
-    
-- writing a standalone PRD or DESIGN document without implementing or validating the website
-    
+Synapse is **not** a generic portfolio template. Do not introduce visual or structural patterns simply because they are popular in other portfolio websites.
 
 ---
 
-# 4. Core Project Rules
+# 5. Core Design Rules
 
-These rules are mandatory unless explicitly overridden by the project's current documentation.
+These rules are mandatory unless the user explicitly overrides them.
 
-## 4.1 Product identity
+## 5.1 Synapse has its own visual identity
 
-The website is named:
+Do not use the Education or Industry visual directions as the website's global visual system.
 
-**Synapse**
+Education and Industry are **content categories**, not separate global themes.
 
-The homepage must communicate Synapse as a curated group UI/UX portfolio.
+Synapse's primary visual identity uses:
 
-The homepage structure is:
+* Light background: `#FFF8E7`
+* Primary: `#930500`
+* Secondary: `#95BBEA`
 
-1. Navbar
-    
-2. Spacious Welcome / Intro section
-    
-3. Split-View Hero
-    
-4. Project Showcase
-    
-5. Design System Preview
-    
-6. Team Profile
-    
-7. Weekly Assignment Archive
-    
-8. Footer
-    
+Additional colors may be used when required by the design system, but new colors must have a clear purpose.
 
-Do not add major homepage sections merely because they are common portfolio patterns.
+Dark mode may use an appropriate dark adaptation while preserving Synapse's identity.
 
 ---
 
-## 4.2 Visual identity
+## 5.2 No gradients
 
-Synapse has its own visual identity.
+Do not introduce gradients anywhere in the Synapse interface unless the user explicitly requests one.
 
-Do **not** use the visual directions of the Education or Industrial project domains as the website's global visual theme.
+Avoid:
 
-The website palette is:
+* Linear gradients.
+* Radial gradients.
+* Gradient text.
+* Gradient backgrounds.
+* Gradient overlays used purely for decoration.
 
-- `#FFF2B2`
-    
-- `#A8C6E7`
-    
-- `#FFE08A`
-    
-- `#FFF7D6`
-    
-- `#7FA8D6`
-    
-
-These colors must remain recognizable in the implementation.
-
-Dark mode may use an appropriate dark blue-gray foundation while preserving the project's blue/yellow identity.
-
-Do not introduce gradients.
-
-Avoid unnecessary decorative effects.
+Use typography, spacing, imagery, borders, contrast, scale, and composition to create visual interest instead.
 
 ---
 
-## 4.3 Typography
+## 5.3 Negative space is intentional
 
-Preferred typeface:
+The homepage begins with a large welcome section immediately after the Navbar.
 
-**Plus Jakarta Sans**
+Its content is intentionally minimal:
 
-Fallback:
+* Website name: `Synapse`
+* A short supporting body/caption.
 
-```text
-Inter, system-ui, sans-serif
-```
+Do not fill this area with unnecessary:
 
-Typography should create hierarchy rather than relying on excessive cards, borders, shadows, or decoration.
+* Images.
+* Cards.
+* Illustrations.
+* Decorative gradients.
+* Floating shapes.
+* Excessive animation.
+* Marketing copy.
 
-Large typography is encouraged for major editorial headings.
-
----
-
-## 4.4 Layout
-
-Use a spacious editorial layout.
-
-Default desktop structure:
-
-- maximum content width around `1280px`
-    
-- 12-column grid
-    
-- approximately `24px` gutter
-    
-
-Tablet:
-
-- 8-column grid
-    
-- approximately `20px` gutter
-    
-
-Mobile:
-
-- 4-column grid
-    
-- approximately `16px` side padding
-    
-
-Use whitespace intentionally.
-
-Do not compress sections merely to fit more information above the fold.
+Whitespace is part of the design, not missing content.
 
 ---
 
-## 4.5 Motion
+## 5.4 Project showcase
 
-Motion should follow the **Subtle / Editorial** direction.
-
-Preferred motion:
-
-- fade
-    
-- slide
-    
-- slight scale
-    
-- light parallax
-    
-- controlled hover transitions
-    
-
-Typical duration range:
-
-- micro interaction: `120–180ms`
-    
-- buttons: `180–220ms`
-    
-- component transitions: `250–350ms`
-    
-- section transitions: `350–500ms`
-    
-- hero transitions: `500–700ms`
-    
-
-Do not add animation simply because an animation library is available.
-
-Every significant animation must preserve usability and support reduced-motion preferences.
-
----
-
-## 4.6 Project showcase
-
-The project showcase should feel inspired by high-end editorial portfolio presentation, including the general presentation language associated with Awwwards-style sites.
-
-Use Awwwards as a **presentation reference**, not as a source for copying another site's identity or layout.
-
-Preferred behavior:
-
-- editorial composition
-    
-- generous whitespace
-    
-- strong typography
-    
-- visual project previews
-    
-- clear project metadata
-    
-- controlled hover interaction
-    
-- horizontal progression where appropriate
-    
-- touch-friendly interaction on mobile
-    
-
-Do not implement an infinite autoplay carousel.
-
-The showcase must remain understandable without animation.
-
----
-
-## 4.7 Project detail
-
-Project detail route:
-
-```text
-/proyek/[slug]
-```
-
-The page may contain:
-
-1. Project Hero
-    
-2. Overview
-    
-3. Project Information
-    
-4. Process / Documentation
-    
-5. Research
-    
-6. Wireframe
-    
-7. Final Design
-    
-8. Figma Prototype
-    
-9. Next Project
-    
-
-These sections are **conditional**.
-
-Do not render empty headings when a project does not have corresponding content.
-
-A project does not need to follow a rigid case-study template.
-
----
-
-## 4.8 CMS
+The project showcase should feel editorial and portfolio-oriented.
 
 Use:
 
-**Sanity Studio**
+* Large visual elements.
+* Strong typography.
+* Generous whitespace.
+* Intentional asymmetry where appropriate.
+* Clear project hierarchy.
+* User-controlled horizontal exploration.
 
-Do not build a custom CMS dashboard for v1.
+Do not create:
 
-The CMS must support at minimum:
+* Autoplaying infinite carousels.
+* Content that moves without user control.
+* Excessive card grids.
+* Generic SaaS dashboard layouts.
 
-- projects
-    
-- team members
-    
-- weekly assignments
-    
-- relevant site content
-    
-
-Project content should be flexible enough to support different documentation structures.
-
----
-
-## 4.9 Accessibility
-
-Target:
-
-**WCAG 2.1 AA**
-
-Always consider:
-
-- semantic HTML
-    
-- keyboard navigation
-    
-- visible focus states
-    
-- meaningful image alt text
-    
-- sufficient contrast
-    
-- accessible interactive controls
-    
-- touch target sizing
-    
-- reduced motion
-    
-- accessible tables
-    
-- accessible error states
-    
-- accessible empty states
-    
-- accessible loading states
-    
-
-Never make accessibility dependent on visual styling alone.
+On mobile, horizontal project exploration must remain usable through touch/swipe interaction.
 
 ---
 
-# 5. Execution Workflow
+## 5.5 Project detail pages
 
-Always execute the following workflow unless the task is explicitly limited to a smaller operation.
+Project detail content is flexible.
+
+The expected structure is:
+
+1. Project Hero
+2. Project Overview
+3. Project Information
+4. Process / Documentation
+5. Research, if available
+6. Wireframe, if available
+7. Final Design
+8. Figma Prototype
+9. Related / Next Project
+
+Do not display empty sections merely because the section exists in the template.
+
+If documentation is unavailable, omit that section gracefully.
+
+---
+
+## 5.6 Motion
+
+Use subtle editorial motion.
+
+Preferred motion characteristics:
+
+* Short duration.
+* Smooth transitions.
+* Low visual intensity.
+* Clear relationship to user interaction.
+* No animation that blocks content access.
+
+Typical duration ranges:
+
+* Micro interaction: `150–200ms`
+* UI transition: `200–300ms`
+* Section transition: `300–500ms`
+* Hero interaction: `400–700ms`
+
+Support `prefers-reduced-motion`.
+
+If motion is not necessary to communicate hierarchy or interaction, do not add it.
+
+---
+
+# 6. Required Workflow
+
+Every implementation task must follow these steps.
+
+---
 
 ## Step 1 — Understand the request
 
 Identify:
 
-- what the user wants changed
-    
-- which page or component is affected
-    
-- whether the task is visual, functional, technical, or mixed
-    
-- whether existing behavior must be preserved
-    
-- whether the task affects desktop, tablet, mobile, or all breakpoints
-    
+* What the user wants changed.
+* Which page or component is affected.
+* Whether the task is visual, functional, content-related, or architectural.
+* Whether the request is within v1.0 scope.
+* Which requirements in `PRD.md` are affected.
+* Which rules in `DESIGN.md` are affected.
 
-Do not start coding before identifying the affected area.
+Do not immediately start coding.
+
+First determine the intended outcome.
 
 ---
 
-## Step 2 — Read the relevant project documentation
+## Step 2 — Inspect the relevant source documents
 
-At minimum, inspect:
+Read the relevant sections of:
 
-```text
-PRD.md
-DESIGN.md
-SKILL.md
-AGENTS.md
-```
+* `PRD.md`
+* `DESIGN.md`
+* `AGENTS.md`, if available.
 
-If only a small implementation change is requested, read the relevant sections rather than unnecessarily processing the entire repository.
+Do not read unrelated sections solely to increase context.
 
 For example:
 
-- color change → design tokens
-    
-- project page → project detail requirements
-    
-- Sanity work → CMS requirements
-    
-- animation → motion rules
-    
-- responsive issue → responsive rules
-    
-- accessibility issue → accessibility rules
-    
+If asked to implement the Team section:
+
+* Read the Team requirements in `PRD.md`.
+* Read the Team layout and component specification in `DESIGN.md`.
+* Read relevant repository conventions in `AGENTS.md`.
 
 ---
 
 ## Step 3 — Inspect the existing implementation
 
-Before creating a new component, determine whether an equivalent component already exists.
+Before creating or changing a component:
 
-Search for:
+1. Find whether the component already exists.
+2. Find related components.
+3. Inspect existing styling and design tokens.
+4. Inspect existing data structures.
+5. Inspect existing Sanity schemas if content-driven.
+6. Reuse existing primitives when appropriate.
 
-- existing routes
-    
-- components
-    
-- design tokens
-    
-- utility functions
-    
-- CMS schemas
-    
-- existing animation patterns
-    
-- existing responsive patterns
-    
+Do not create duplicate components when an existing component can fulfill the requirement.
 
-Prefer reuse over duplication.
+Prefer:
 
-Do not create:
+> Reuse → Extend → Refactor → Create new
 
-```text
-ProjectCard.tsx
-ProjectCardNew.tsx
-ProjectCardFinal.tsx
-ProjectCardV2.tsx
-```
+rather than:
 
-when one reusable component can solve the problem.
+> Create new → Duplicate → Fix conflicts later.
+
+Humanity has suffered enough from 17 nearly identical `Button` components.
 
 ---
 
-## Step 4 — Define the smallest implementation plan
+## Step 4 — Determine the smallest valid change
 
-Before modifying code, determine:
+Implement the smallest change that fully satisfies the request.
 
-1. Files to create
-    
-2. Files to modify
-    
-3. Existing components to reuse
-    
-4. Data sources involved
-    
-5. Validation required
-    
+Do not introduce unrelated:
 
-Prefer the smallest change that satisfies the requirement.
+* Features.
+* Dependencies.
+* Design patterns.
+* Refactors.
+* File restructuring.
+* CMS schemas.
+* Animations.
 
-Do not refactor unrelated code while implementing a feature unless the existing architecture prevents the requested behavior.
+A task asking for a project card should not result in a new design system, routing architecture, and philosophical treatise on cards.
 
 ---
 
-## Step 5 — Implement using project conventions
+## Step 5 — Implement according to the design specification
 
-Follow the existing repository conventions for:
+Translate `DESIGN.md` into implementation.
 
-- file naming
-    
-- component naming
-    
-- imports
-    
-- route structure
-    
-- styling
-    
-- TypeScript types
-    
-- data fetching
-    
-- CMS access
-    
-- error handling
-    
+Respect:
 
-If the repository already has a pattern for solving the problem, follow that pattern.
+* Color tokens.
+* Typography hierarchy.
+* Spacing.
+* Responsive behavior.
+* Component structure.
+* Interaction rules.
+* Motion rules.
+* Accessibility requirements.
+* Empty/loading/error/success states.
 
-Do not introduce a new dependency when an existing project dependency already solves the requirement.
+Do not approximate the design with arbitrary values when an existing token already exists.
 
 ---
 
 ## Step 6 — Implement responsive behavior
 
-Every visual feature must be evaluated at:
+Every new UI implementation must consider:
 
-```text
-Desktop
-Tablet
-Mobile
-```
+### Mobile
 
-Do not treat mobile as an afterthought.
+* Narrow viewport.
+* Touch interaction.
+* Stacked layouts where necessary.
+* Horizontal scrolling when specified.
+* Readable typography.
+* Adequate touch targets.
 
-Check:
+### Tablet
 
-- text wrapping
-    
-- image cropping
-    
-- navigation
-    
-- spacing
-    
-- horizontal overflow
-    
-- button sizes
-    
-- tables
-    
-- embeds
-    
-- cards
-    
-- touch interaction
-    
-- animation behavior
-    
+* Intermediate layout.
+* Appropriate spacing.
+* Avoid simply stretching the mobile layout.
 
-If a desktop interaction cannot work naturally on mobile, provide an appropriate mobile interaction rather than forcing the desktop pattern.
+### Desktop
+
+* Full editorial composition.
+* Maximum content width.
+* Large typography where specified.
+* Generous negative space.
+
+Do not treat responsiveness as an afterthought.
 
 ---
 
-## Step 7 — Implement states
+## Step 7 — Implement accessibility
 
-Interactive or data-driven components must account for relevant states:
+Every relevant implementation must follow WCAG 2.1 AA design intent.
+
+Check:
+
+* Semantic HTML.
+* Heading hierarchy.
+* Keyboard navigation.
+* Visible focus states.
+* Sufficient color contrast.
+* Meaningful `alt` text.
+* Correct button/link semantics.
+* Touch target size.
+* Reduced-motion behavior.
+* Information that is not conveyed through color alone.
+
+For Figma prototypes:
+
+* Provide a fallback link if embedding is unavailable or inaccessible.
+
+---
+
+## Step 8 — Implement content architecture when required
+
+When content is managed through Sanity:
+
+1. Determine whether an appropriate schema already exists.
+2. Reuse the existing schema when possible.
+3. Add fields only when the requirement requires them.
+4. Ensure required and optional content are clearly distinguished.
+5. Handle missing optional content gracefully.
+6. Do not create a custom admin dashboard.
+
+Sanity Studio is the administration interface.
+
+---
+
+## Step 9 — Handle states
+
+Every content-driven component should consider relevant states.
 
 ### Loading
 
 Use:
 
-- skeleton
-    
-- placeholder
-    
-- reserved layout space
-    
-
-Avoid layout jumps.
+* Skeletons.
+* Reserved layout space.
+* Non-blocking loading indicators where appropriate.
 
 ### Empty
 
-Use:
+Show a clear message when content does not exist.
 
-- simple explanation
-    
-- optional illustration
-    
-- optional CTA
-    
-
-Do not leave a blank section without explanation.
+Do not leave unexplained blank space.
 
 ### Error
 
-Use:
+Show:
 
-- clear error message
-    
-- retry action where applicable
-    
-
-Do not expose raw stack traces or implementation errors to normal users.
+* Clear error feedback.
+* Retry action where meaningful.
+* Stable surrounding layout where possible.
 
 ### Success
 
-Use:
+Use lightweight confirmation feedback when an action requires confirmation.
 
-- inline confirmation
-    
-- toast
-    
-- or another lightweight confirmation mechanism
-    
-
-Do not interrupt the user's flow unnecessarily.
+Do not create intrusive success screens for simple interactions.
 
 ---
 
-## Step 8 — Validate
+## Step 10 — Validate the implementation
 
-Validation is mandatory.
+After implementation, verify:
 
-After implementation:
+### Functional
 
-1. Check that the application builds.
-    
-2. Check the affected route.
-    
-3. Check console/runtime errors.
-    
-4. Check responsive behavior.
-    
-5. Check accessibility requirements relevant to the change.
-    
-6. Check the implementation against `PRD.md`.
-    
-7. Check the implementation against `DESIGN.md`.
-    
+* The requested behavior works.
+* Navigation works.
+* Links point to the correct destinations.
+* Dynamic content renders correctly.
+* Optional content does not create broken layouts.
+* Theme switching works where relevant.
 
-If validation fails:
+### Visual
 
-1. Identify the smallest cause.
-    
-2. Fix it.
-    
-3. Run the relevant validation again.
-    
-4. Repeat until the affected validation passes.
-    
+* Colors follow Synapse tokens.
+* No unauthorized gradients exist.
+* Typography hierarchy is preserved.
+* Spacing is consistent.
+* Negative space is preserved.
+* Layout behaves correctly at different viewport sizes.
 
-Never declare the task complete while a known blocking error remains.
+### Responsive
 
----
+Check at minimum:
 
-# 6. Decision Rules
+* Mobile.
+* Tablet.
+* Desktop.
 
-When multiple implementation approaches are possible, use these rules.
+### Accessibility
 
-## Rule 1 — Requirement beats convention
+Check:
 
-If an existing implementation conflicts with `PRD.md` or `DESIGN.md`, follow the project documentation.
+* Keyboard navigation.
+* Focus visibility.
+* Semantic structure.
+* Contrast.
+* Reduced motion.
+* Alternative text.
 
-## Rule 2 — Reuse beats duplication
+### Scope
 
-Reuse existing components and tokens whenever possible.
-
-## Rule 3 — Simple beats clever
-
-Prefer understandable code over abstractions that exist only to demonstrate technical sophistication.
-
-Humanity already has enough unnecessary abstractions.
-
-## Rule 4 — Content beats decoration
-
-If a visual effect competes with project content, remove or reduce the effect.
-
-## Rule 5 — Accessibility beats aesthetics
-
-Never sacrifice keyboard access, readability, contrast, or reduced-motion support for a visual effect.
-
-## Rule 6 — Progressive enhancement
-
-The core content and navigation must remain usable without relying on animation.
-
-## Rule 7 — No invented requirements
-
-If the project documentation does not specify a behavior, do not present an assumption as a requirement.
-
-Choose the least surprising implementation or identify the assumption explicitly.
+Confirm that the implementation did not accidentally introduce an out-of-scope v1.0 feature.
 
 ---
 
-# 7. Examples
+## Step 11 — Review against the requirement
 
-## Example 1 — Adding a project card
+Before considering the task complete, explicitly compare the implementation against the relevant requirement.
 
-### User request
+Use this mental checklist:
 
-> Tambahkan project baru ke showcase homepage.
-
-### Correct behavior
-
-1. Inspect `PRD.md` for project showcase requirements.
-    
-2. Inspect `DESIGN.md` for `ProjectCard` and showcase behavior.
-    
-3. Inspect the existing project data model.
-    
-4. Check whether Sanity already contains the project.
-    
-5. Reuse the existing `ProjectCard`.
-    
-6. Add the project through the CMS/data source rather than hardcoding it in the page.
-    
-7. Verify:
-    
-    - project title
-        
-    - category
-        
-    - year
-        
-    - preview image
-        
-    - description
-        
-    - link to `/proyek/[slug]`
-        
-8. Check desktop, tablet, and mobile.
-    
-9. Verify keyboard accessibility.
-    
-10. Verify that the project appears correctly without breaking the horizontal showcase.
-    
-
-### Incorrect behavior
-
-Create a one-off card directly inside the homepage:
-
-```tsx
-<div className="custom-project-card">
-  ...
-</div>
+```text
+Requirement understood?
+        ↓
+Correct existing implementation inspected?
+        ↓
+Smallest valid change implemented?
+        ↓
+Design specification respected?
+        ↓
+Responsive behavior handled?
+        ↓
+Accessibility handled?
+        ↓
+Content/state edge cases handled?
+        ↓
+Implementation verified?
+        ↓
+No unnecessary scope added?
+        ↓
+DONE
 ```
 
-while an existing `ProjectCard` and CMS model already exist.
+---
+
+# 7. Implementation Rules
+
+## 7.1 Reuse existing tokens
+
+If a design token exists, use it.
+
+Prefer:
+
+```text
+Synapse primary token
+```
+
+over:
+
+```text
+#8F0603
+```
+
+unless the different value is explicitly required.
+
+Do not create visually similar duplicate values.
 
 ---
 
-## Example 2 — Adding animation
+## 7.2 Avoid arbitrary styling
+
+Do not add arbitrary:
+
+* Colors.
+* Font sizes.
+* Border radii.
+* Shadows.
+* Spacing.
+* Animation durations.
+
+If a new value is genuinely required, choose it consistently with the existing design system.
+
+---
+
+## 7.3 Keep components focused
+
+A component should have one clear responsibility.
+
+Prefer:
+
+```text
+ProjectShowcase
+ProjectShowcaseItem
+ProjectMeta
+```
+
+over one enormous component containing every section of the application.
+
+---
+
+## 7.4 Separate content from presentation
+
+Content that belongs in Sanity should not be hardcoded into UI components when the requirement expects it to be editable.
+
+For example:
+
+Do not hardcode:
+
+```text
+Project title
+Project description
+Team member role
+Weekly assignment title
+```
+
+when these are CMS-managed fields.
+
+---
+
+## 7.5 Preserve optional content
+
+Project documentation is flexible.
+
+For example:
+
+```text
+Research available?
+    Yes → render ResearchSection
+    No  → omit ResearchSection
+```
+
+Do not render:
+
+```text
+Research
+No research available
+```
+
+unless the design explicitly requires an empty state.
+
+---
+
+## 7.6 Avoid unnecessary dependencies
+
+Before adding a package:
+
+1. Check whether the functionality already exists.
+2. Check whether the existing stack can solve the problem.
+3. Check whether the dependency is justified by project requirements.
+4. Add it only when necessary.
+
+Do not install a library because its README has a particularly attractive screenshot.
+
+---
+
+## 7.7 Do not break existing behavior
+
+When modifying an existing component:
+
+* Preserve existing public behavior.
+* Preserve required props/data contracts unless intentionally changing them.
+* Preserve accessibility.
+* Preserve responsive behavior.
+* Preserve theme support.
+
+If the requested change necessarily breaks an existing contract, identify the affected areas before proceeding.
+
+---
+
+# 8. Synapse Page Rules
+
+## 8.1 Homepage order
+
+The homepage should follow this order:
+
+```text
+Navbar
+↓
+Welcome / Negative Space
+↓
+Split-View Hero
+↓
+Project Showcase
+↓
+Design System Preview
+↓
+Team
+↓
+Weekly Assignment Archive
+↓
+Footer
+```
+
+Do not reorder these sections without an explicit design/product decision.
+
+---
+
+## 8.2 Split-View Hero
+
+The Split-View Hero provides entry points into:
+
+* Education
+* Industry
+
+It is a content/category distinction.
+
+It must not make the entire website look like two unrelated websites.
+
+Possible interaction:
+
+* Hover-based panel emphasis on desktop.
+* Touch-friendly interaction on mobile.
+* Subtle motion.
+
+Avoid aggressive animation.
+
+---
+
+## 8.3 Design System Preview
+
+The Design System Preview should expose enough of Synapse's visual language to demonstrate:
+
+* Colors.
+* Typography.
+* Components.
+* Theme differences.
+* Visual hierarchy.
+
+It is a showcase of the system, not a separate design playground application.
+
+---
+
+## 8.4 Team
+
+Each team member should support at least:
+
+* Name.
+* Photo.
+* Role.
+
+Additional information may be added only when supported by the requirements or available content.
+
+---
+
+## 8.5 Weekly Assignment Archive
+
+The archive represents weekly college assignments.
+
+Present the information in a table-oriented structure on desktop.
+
+On smaller screens, use a responsive representation such as:
+
+* Horizontal table scrolling.
+* Stacked rows/cards when appropriate.
+
+Do not sacrifice readability merely to force a desktop table into a narrow viewport.
+
+---
+
+# 9. Sanity Content Rules
+
+At minimum, support content concepts for:
+
+### Project
+
+Potential fields include:
+
+* Title.
+* Slug.
+* Category.
+* Description.
+* Project information.
+* Hero media.
+* Documentation.
+* Research.
+* Wireframe.
+* Final design.
+* Figma prototype.
+* Related/next project.
+
+Optional fields must remain optional when the project does not have that documentation.
+
+### Team Member
+
+At minimum:
+
+* Name.
+* Photo.
+* Role.
+
+### Weekly Assignment
+
+At minimum:
+
+* Assignment title.
+* Week information.
+* Relevant project/category reference when applicable.
+* Supporting information required by the archive design.
+
+Do not invent additional required fields without a product requirement.
+
+---
+
+# 10. Examples
+
+## Example 1 — Add a new project
 
 ### User request
 
-> Bikin project card-nya lebih hidup ketika di-hover.
+> Tambahkan project baru ke Synapse.
 
-### Correct behavior
+### Correct execution
 
-1. Inspect the existing motion system.
-    
-2. Use a subtle transform or opacity transition.
-    
-3. Keep the interaction within the editorial motion direction.
-    
-4. Avoid excessive scale or rotation.
-    
-5. Ensure the card remains readable.
-    
-6. Respect `prefers-reduced-motion`.
-    
+1. Read project requirements.
+2. Inspect existing project schema.
+3. Check whether the project model already supports the required fields.
+4. Add the project through Sanity content management.
+5. Verify the project appears in the showcase.
+6. Verify `/proyek/[slug]` renders the project.
+7. Verify optional sections are omitted when data is unavailable.
+8. Verify responsive behavior.
+9. Verify the Figma prototype fallback if applicable.
+
+Do not create a new project page template if the existing dynamic project route already supports it.
+
+---
+
+## Example 2 — Add Research documentation
+
+### User request
+
+> Project X sekarang punya dokumentasi research. Tampilkan di halaman detail.
+
+### Correct execution
+
+1. Inspect the existing project detail implementation.
+2. Inspect the Sanity project schema.
+3. Determine whether research content is already supported.
+4. If supported, populate the existing field.
+5. If not supported, add the minimum required schema structure.
+6. Render `ResearchSection` only when research content exists.
+7. Verify the layout does not break for projects without research.
+8. Verify mobile and desktop presentation.
+
+Do not force every project to have a Research section.
+
+---
+
+## Example 3 — Change the primary color
+
+### User request
+
+> Ganti warna utama Synapse.
+
+### Correct execution
+
+1. Confirm that this is a global design change.
+2. Inspect `DESIGN.md`.
+3. Identify every component using the primary color token.
+4. Update the design token rather than manually changing individual components.
+5. Verify light mode.
+6. Verify dark mode.
+7. Verify contrast.
+8. Verify components such as links, buttons, headings, and interactive states.
+
+Do not replace individual hex values randomly throughout the codebase.
+
+---
+
+## Example 4 — Add an animation
+
+### User request
+
+> Bikin hero lebih hidup saat hover.
+
+### Correct execution
+
+1. Identify the Hero interaction.
+2. Use the existing motion principles.
+3. Keep the animation subtle and editorial.
+4. Use a short, smooth transition.
+5. Ensure the interaction does not block navigation.
+6. Provide reduced-motion behavior.
 7. Verify keyboard/focus behavior.
-    
-8. Test touch behavior so mobile users do not depend on hover.
-    
+8. Test on touch devices.
 
-A suitable interaction might be:
-
-```text
-rest
-→ slight image movement
-→ subtle scale
-→ metadata transition
-```
-
-### Incorrect behavior
-
-```text
-card
-→ rotate 8 degrees
-→ scale 1.2
-→ particle effect
-→ glowing border
-→ autoplay animation
-```
-
-That is not editorial design. That is a cry for help from a CSS file.
+Do not introduce autoplay animation or large continuous motion.
 
 ---
 
-## Example 3 — Adding a new project-detail section
+## Example 5 — Add a custom admin dashboard
 
 ### User request
 
-> Tambahkan bagian research ke halaman project.
+> Buat dashboard admin sendiri untuk mengelola project.
 
-### Correct behavior
+### Correct execution
 
-1. Check whether `research` already exists in the project content model.
-    
-2. If it exists, render it conditionally.
-    
-3. If it does not exist, determine whether the CMS schema needs extension.
-    
-4. Follow the project-detail layout in `DESIGN.md`.
-    
-5. Do not render an empty section when research content is unavailable.
-    
-6. Make images accessible.
-    
-7. Check responsive image layout.
-    
-8. Validate the project route.
-    
+Reject the implementation as unnecessary under the current specification.
 
-### Incorrect behavior
+Reason:
 
-Always render:
+* Sanity is the CMS.
+* Sanity Studio is the administration interface.
+* A custom admin dashboard is not part of the current v1.0 scope.
 
-```text
-RESEARCH
-
-No research available.
-```
-
-for every project even when research is not part of that project's documentation.
+Only implement it if the product requirements are explicitly changed.
 
 ---
 
-## Example 4 — Adding a new color
+## Example 6 — Build a new section not mentioned in the PRD
 
 ### User request
 
-> Pakai warna merah untuk tombol utama.
+> Tambahkan blog dan komentar untuk setiap project.
 
-### Correct behavior
+### Correct execution
 
-First check whether the requirement is intentional and whether an existing semantic token can satisfy it.
+Do not silently implement it.
 
-Do not immediately add:
+First classify the request as a scope change because blog/comment functionality is outside the current v1.0 scope.
 
-```css
---red: #ff0000;
-```
-
-Instead:
-
-1. Check the existing semantic color system.
-    
-2. Check `DESIGN.md`.
-    
-3. Determine whether the requested color belongs to the Synapse visual identity.
-    
-4. Check contrast.
-    
-5. If the change would materially alter the design system, identify the impact before applying it broadly.
-    
-
-If the user explicitly confirms the new color as a design-system change, introduce it through semantic tokens rather than scattered literal values.
+The requirement must be intentionally updated before implementation.
 
 ---
 
-# 8. Common Failure Modes
+# 11. Common Failure Modes
 
-## Failure 1 — Building from memory
+## Failure 1 — Coding before reading the specification
 
 ### Problem
 
-The agent remembers generic portfolio conventions and ignores the project's actual documentation.
+The model immediately writes code based on the user's short request.
 
-### Recovery
+### Consequence
 
-Re-read the relevant sections of:
+The implementation may contradict existing requirements or duplicate existing components.
+
+### Prevention
+
+Always inspect:
 
 ```text
 PRD.md
 DESIGN.md
+AGENTS.md
+existing implementation
 ```
 
-Then compare the implementation against them.
+before making non-trivial changes.
 
 ---
 
-## Failure 2 — Treating Synapse like a generic portfolio template
+## Failure 2 — Treating Education and Industry as website themes
 
 ### Problem
 
-The agent adds:
+The model creates a blue/orange Education theme and a dark cyan Industry theme across the entire interface.
 
-- testimonials
-    
-- blog
-    
-- services
-    
-- contact form
-    
-- pricing
-    
-- likes
-    
-- comments
-    
-- unnecessary search
-    
-- unnecessary analytics
-    
+### Why it is wrong
 
-### Recovery
+Education and Industry are content categories.
 
-Check the v1 scope in `PRD.md`.
+Synapse has its own visual identity.
 
-Do not implement features outside scope unless explicitly requested.
+### Correct behavior
+
+Use the Synapse design system globally.
+
+Use Education/Industry as content classification and navigation context.
 
 ---
 
-## Failure 3 — Using gradients
+## Failure 3 — Adding gradients
 
 ### Problem
 
-The implementation adds:
+The model adds a gradient to make the design "more modern."
 
-```css
-background: linear-gradient(...);
-```
+### Why it is wrong
 
-### Recovery
+Gradients are explicitly prohibited.
 
-Remove the gradient.
+### Correct behavior
 
 Use:
 
-- solid color
-    
-- typography
-    
-- spacing
-    
-- borders
-    
-- imagery
-    
-- subtle shadow
-    
-- motion
-    
-
-to establish hierarchy instead.
+* Typography.
+* Scale.
+* Spacing.
+* Imagery.
+* Borders.
+* Contrast.
+* Composition.
 
 ---
 
-## Failure 4 — Copying Awwwards directly
+## Failure 4 — Filling the welcome section
 
 ### Problem
 
-The agent copies a specific website's:
+The model adds images, illustrations, cards, statistics, or decorative shapes to the large opening area.
 
-- layout
-    
-- branding
-    
-- typography
-    
-- visual identity
-    
-- exact interaction
-    
+### Why it is wrong
 
-### Recovery
+The negative space is intentional.
 
-Use Awwwards only as a reference for general presentation qualities:
+### Correct behavior
 
-- editorial composition
-    
-- whitespace
-    
-- typography
-    
-- visual hierarchy
-    
-- interaction quality
-    
-
-Maintain Synapse's own visual identity.
-
----
-
-## Failure 5 — Hardcoding CMS content
-
-### Problem
-
-Projects, members, or assignments are directly embedded into components even though Sanity is required.
-
-### Recovery
-
-Move content into the appropriate Sanity schema/query and keep presentation components data-driven.
-
----
-
-## Failure 6 — Empty optional sections
-
-### Problem
-
-A project renders headings for Research, Wireframe, or Final Design even when there is no content.
-
-### Recovery
-
-Make optional sections conditional.
-
-No content:
+Keep the opening focused on:
 
 ```text
-do not render section
-```
-
-Content exists:
-
-```text
-render section
+Synapse
++
+supporting caption/body
 ```
 
 ---
 
-## Failure 7 — Desktop-only implementation
+## Failure 5 — Creating excessive UI
 
 ### Problem
 
-The desktop version looks correct but:
+Every piece of content becomes a card.
 
-- horizontal scrolling breaks on mobile
-    
-- text overflows
-    
-- tables become unusable
-    
-- navigation becomes inaccessible
-    
-- Figma embeds overflow the viewport
-    
+### Why it is wrong
 
-### Recovery
+Synapse follows an editorial portfolio direction rather than a generic dashboard/card-grid aesthetic.
 
-Re-test at mobile and tablet breakpoints.
+### Correct behavior
 
-Adapt interaction patterns instead of merely shrinking desktop components.
+Use composition, typography, imagery, and whitespace to create hierarchy.
 
 ---
 
-## Failure 8 — Animation without reduced-motion support
+## Failure 6 — Autoplay carousel
 
 ### Problem
 
-Important movement continues even when the user requests reduced motion.
+The project showcase automatically scrolls.
 
-### Recovery
+### Why it is wrong
+
+The showcase is user-controlled.
+
+### Correct behavior
+
+Use horizontal exploration controlled by the visitor, including touch/swipe on mobile.
+
+---
+
+## Failure 7 — Rendering unavailable project sections
+
+### Problem
+
+Every project displays:
+
+```text
+Research
+Wireframe
+Final Design
+Prototype
+```
+
+even when the project has no corresponding documentation.
+
+### Why it is wrong
+
+Project case studies are intentionally flexible.
+
+### Correct behavior
+
+Render optional sections only when content exists.
+
+---
+
+## Failure 8 — Hardcoding CMS content
+
+### Problem
+
+The model writes project titles, team members, and assignments directly into components.
+
+### Why it is wrong
+
+These are content-managed entities.
+
+### Correct behavior
+
+Use Sanity content when the relevant information is expected to be editable.
+
+---
+
+## Failure 9 — Building a custom admin dashboard
+
+### Problem
+
+The model creates `/admin` even though Sanity Studio already handles administration.
+
+### Why it is wrong
+
+It duplicates existing CMS functionality and expands scope unnecessarily.
+
+### Correct behavior
+
+Use Sanity Studio.
+
+---
+
+## Failure 10 — Ignoring mobile
+
+### Problem
+
+The model creates a desktop layout and assumes it will automatically become responsive.
+
+### Why it is wrong
+
+Editorial layouts often require deliberate responsive behavior.
+
+### Correct behavior
+
+Explicitly design and test mobile, tablet, and desktop behavior.
+
+---
+
+## Failure 11 — Overengineering
+
+### Problem
+
+A small feature causes:
+
+* New dependencies.
+* New architecture.
+* New abstraction layers.
+* Large refactors.
+* Unrelated file changes.
+
+### Why it is wrong
+
+The implementation becomes harder to maintain than the feature itself.
+
+### Correct behavior
+
+Make the smallest change that satisfies the requirement.
+
+---
+
+## Failure 12 — Adding unrequested features
+
+### Problem
+
+The model adds:
+
+* Search.
+* Comments.
+* Blog.
+* Analytics dashboard.
+* Authentication for public visitors.
+* AI features.
+* Multi-language support.
+* Marketplace functionality.
+
+### Why it is wrong
+
+These are outside the defined v1.0 scope.
+
+### Correct behavior
+
+Do not expand scope unless explicitly requested and intentionally accepted.
+
+---
+
+## Failure 13 — Ignoring reduced motion
+
+### Problem
+
+The model adds animated transitions without considering users who prefer reduced motion.
+
+### Correct behavior
 
 Respect:
 
-```css
-@media (prefers-reduced-motion: reduce)
+```text
+prefers-reduced-motion
 ```
 
-Reduce or disable non-essential animation while preserving usability.
+and provide a reduced-motion experience.
 
 ---
 
-## Failure 9 — Duplicate components
+## Failure 14 — Using color as the only information signal
 
 ### Problem
 
-A new component is created even though an equivalent reusable component already exists.
+A project category, state, or action is distinguished only through color.
 
-### Recovery
+### Why it is wrong
 
-Search the repository first.
+This reduces accessibility.
 
-Prefer extending the existing component when the behavior belongs to the same conceptual component.
+### Correct behavior
 
-Only create a new component when the responsibility is genuinely different.
+Combine color with:
+
+* Text.
+* Icons where appropriate.
+* Labels.
+* Structure.
+* Position.
+* Other visual cues.
 
 ---
 
-## Failure 10 — Fixing unrelated code
+## Failure 15 — Figma embed without fallback
 
 ### Problem
 
-A small UI request results in a massive refactor.
+The model assumes an embedded Figma prototype will always load.
 
-### Recovery
+### Correct behavior
 
-Return to the smallest change that satisfies the requirement.
-
-Only expand scope when:
-
-- the existing architecture prevents implementation,
-    
-- the change fixes a directly related bug,
-    
-- or the user explicitly requested refactoring.
-    
+Provide a fallback link or alternative access method when appropriate.
 
 ---
 
-## Failure 11 — Declaring success without validation
+# 12. Definition of Done
 
-### Problem
+A Synapse implementation task is complete only when all applicable conditions are satisfied.
 
-The agent modifies code and immediately reports completion.
+### Requirements
 
-### Recovery
+* [ ] The requested requirement is implemented.
+* [ ] The implementation does not contradict `PRD.md`.
+* [ ] The implementation follows `DESIGN.md`.
+* [ ] The implementation follows `AGENTS.md`, if available.
 
-Run the appropriate validation workflow.
+### Design
 
-At minimum:
+* [ ] Synapse visual identity is preserved.
+* [ ] No unauthorized gradients are used.
+* [ ] Typography hierarchy is preserved.
+* [ ] Spacing is intentional.
+* [ ] Negative space is preserved where specified.
+* [ ] Project showcase remains editorial and user-controlled.
+
+### Responsive
+
+* [ ] Mobile behavior works.
+* [ ] Tablet behavior works.
+* [ ] Desktop behavior works.
+* [ ] Touch interactions work where required.
+
+### Accessibility
+
+* [ ] Semantic HTML is used.
+* [ ] Keyboard interaction works.
+* [ ] Focus states are visible.
+* [ ] Contrast is acceptable.
+* [ ] Images have appropriate alternative text.
+* [ ] Touch targets are usable.
+* [ ] Reduced motion is supported.
+
+### Content
+
+* [ ] CMS-managed content is not unnecessarily hardcoded.
+* [ ] Optional content is handled gracefully.
+* [ ] Empty states are intentional.
+* [ ] Loading states are handled where necessary.
+* [ ] Error states are handled where necessary.
+
+### Engineering
+
+* [ ] Existing components are reused where appropriate.
+* [ ] No unnecessary dependencies were added.
+* [ ] No unnecessary refactor was introduced.
+* [ ] No unrelated files were changed.
+* [ ] No out-of-scope feature was introduced.
+
+### Verification
+
+* [ ] The requested behavior was manually or programmatically verified.
+* [ ] Relevant routes work.
+* [ ] Relevant interactions work.
+* [ ] Theme behavior works when applicable.
+* [ ] The implementation does not introduce obvious regressions.
+
+---
+
+# 13. Final Execution Principle
+
+When uncertain, follow this sequence:
 
 ```text
-build
-→ affected route
-→ runtime/console check
-→ responsive check
-→ accessibility check
-→ PRD/DESIGN check
+Read the requirement
+        ↓
+Check PRD.md
+        ↓
+Check DESIGN.md
+        ↓
+Check AGENTS.md
+        ↓
+Inspect existing implementation
+        ↓
+Reuse before creating
+        ↓
+Implement the smallest valid change
+        ↓
+Respect Synapse design rules
+        ↓
+Handle responsive + accessibility + states
+        ↓
+Verify against the requirement
+        ↓
+Stop
 ```
 
-Fix failures before completion.
+The goal is not to build the most complicated implementation.
 
----
-
-# 9. Definition of Done
-
-A Synapse implementation task is complete only when:
-
--  The requested behavior is implemented.
-    
--  Existing functionality is preserved unless intentionally changed.
-    
--  The implementation follows `PRD.md`.
-    
--  The implementation follows `DESIGN.md`.
-    
--  Existing components/tokens were reused where appropriate.
-    
--  No unnecessary dependency was introduced.
-    
--  No gradient was introduced.
-    
--  Responsive behavior was considered.
-    
--  Relevant loading/empty/error/success states exist.
-    
--  Relevant accessibility requirements are satisfied.
-    
--  Motion respects reduced-motion preferences.
-    
--  CMS content is not unnecessarily hardcoded.
-    
--  The affected route/component was validated.
-    
--  Build/runtime errors introduced by the change are resolved.
-    
-
-For larger features, also verify:
-
--  The feature works with real CMS data.
-    
--  The feature works when optional content is missing.
-    
--  The feature works on mobile and tablet.
-    
--  Keyboard navigation remains usable.
-    
--  The final implementation still feels like Synapse rather than a generic template.
-    
-
----
-
-# 10. Completion Report
-
-When the implementation is finished, report concisely:
-
-### Changed
-
-List the important files/components changed.
-
-### Implemented
-
-Summarize the actual behavior added or modified.
-
-### Validated
-
-List the validation performed.
-
-### Notes
-
-Mention:
-
-- assumptions
-    
-- unresolved issues
-    
-- intentionally deferred work
-    
-- any requirement conflict that needs human decision
-    
-
-Do not claim a validation was performed if it was not actually performed.
+The goal is to build the **correct Synapse implementation**, with the smallest amount of unnecessary complexity.

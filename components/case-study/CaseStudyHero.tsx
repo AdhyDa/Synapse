@@ -81,6 +81,7 @@ export function CaseStudyHero({ project }: CaseStudyHeroProps) {
             <rect x="536" y="104" width="120" height="6" rx="3" className="fill-[var(--color-text-muted)] opacity-50" />
             <rect x="520" y="194" width="160" height="52" rx="8" className="fill-[var(--color-surface-soft)] stroke-[var(--color-border)]" strokeWidth="2" />
             <rect x="536" y="210" width="70" height="8" rx="4" className="fill-[var(--color-accent)]" />
+            <rect x="536" y="210" width="70" height="8" rx="4" className="fill-[var(--color-secondary)]" />
             <rect x="536" y="224" width="100" height="6" rx="3" className="fill-[var(--color-text-muted)] opacity-50" />
           </svg>
         ) : (
@@ -95,6 +96,7 @@ export function CaseStudyHero({ project }: CaseStudyHeroProps) {
             <rect x="530" y="55" width="200" height="90" rx="8" className="fill-[var(--color-surface-soft)] stroke-[var(--color-border)]" strokeWidth="1.5" />
             <rect x="550" y="95" width="160" height="10" rx="5" className="fill-[var(--color-border)]" />
             <rect x="550" y="95" width="140" height="10" rx="5" className="fill-[var(--color-accent)]" />
+            <rect x="550" y="95" width="140" height="10" rx="5" className="fill-[var(--color-secondary)]" />
             <rect x="70" y="165" width="660" height="95" rx="8" className="fill-[var(--color-surface-soft)] stroke-[var(--color-border)]" strokeWidth="1.5" />
             <rect x="95" y="185" width="120" height="10" rx="5" className="fill-[var(--color-text)] opacity-70" />
             <rect x="95" y="205" width="280" height="8" rx="4" className="fill-[var(--color-text-muted)] opacity-50" />

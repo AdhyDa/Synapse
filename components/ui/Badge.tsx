@@ -17,11 +17,11 @@ interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 
 const domainStyles: Record<ProjectDomain, string> = {
   education:
-    'bg-[var(--color-primary)] text-[#131A24] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-primary)] border-[var(--color-primary-strong)]',
+    'bg-[var(--color-primary)] text-[#FFF8E7] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-primary)] border-[var(--color-primary)]',
   industry:
-    'bg-[var(--color-surface-soft)] text-[var(--color-text)] border-[var(--color-accent)]',
+    'bg-[var(--color-secondary)] text-[#1A1A1A] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-secondary)] border-[var(--color-secondary)]',
   weekly:
-    'bg-[var(--color-highlight)] text-[#131A24] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-accent)] border-[var(--color-accent)]',
+    'bg-[var(--color-surface-soft)] text-[var(--color-text)] border-[var(--color-border)]',
 };
 
 const domainLabels: Record<ProjectDomain, string> = {

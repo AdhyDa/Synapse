@@ -2,6 +2,7 @@
 
 /* ============================================================
    Synapse — Design Tokens (Tailwind v4 @theme)
+   Authoritative Source: DESIGN.md §7.1, AGENTS.md §7.1, SKILL.md §5.1
    ============================================================ */
 
 @theme {
@@ -19,6 +20,19 @@
   --color-text:           #131A24;
   --color-text-muted:     #5C6777;
   --color-border:         #E3DDD1;
+  --color-background:     #FFF8E7; /* Main background (warm ivory) */
+  --color-primary:        #930500; /* Primary brand/accent (deep crimson) */
+  --color-secondary:      #95BBEA; /* Secondary accent (soft periwinkle) */
+  --color-surface:        #FFFDF7; /* Elevated surface */
+  --color-surface-soft:   #F5EEDC; /* Soft tertiary surface layer */
+  --color-border:         #DED8C9; /* Borders & architectural dividers */
+  --color-text:           #1A1A1A; /* Primary high-contrast text */
+  --color-text-muted:     #5C5C5C; /* Secondary muted text */
+
+  /* ── Compatibility Aliases ───────────────────────────── */
+  --color-primary-strong: #930500;
+  --color-accent:         #95BBEA;
+  --color-highlight:      #F5EEDC;
 
   /* ── Border Radius ───────────────────────────────────── */
   --radius-sm:   4px;
@@ -34,6 +48,7 @@
 
 /* ============================================================
    Dark Mode Token Overrides — Deep Obsidian & Electric Slate
+   Dark Mode Token Overrides (DESIGN.md §7.1)
    ============================================================ */
 .dark {
   --color-background:     #0B0F15;
@@ -46,6 +61,17 @@
   --color-text:           #F8FAFC;
   --color-text-muted:     #94A3B8;
   --color-border:         #222E3E;
+  --color-background:     #11110F; /* Main obsidian dark background */
+  --color-primary:        #FF6B63; /* Primary accent (vibrant coral red) */
+  --color-primary-strong: #FF6B63;
+  --color-secondary:      #95BBEA; /* Secondary accent (periwinkle blue) */
+  --color-accent:         #95BBEA;
+  --color-surface:        #1B1B18; /* Elevated dark surface */
+  --color-surface-soft:   #272722; /* Soft dark surface */
+  --color-highlight:      #272722;
+  --color-border:         #34342F; /* Subtle dark borders */
+  --color-text:           #F8F4EA; /* Warm white text */
+  --color-text-muted:     #BDB8AD; /* Secondary soft text */
 }
 
 /* ============================================================
@@ -71,6 +97,7 @@ body {
 /* ── Focus ring ──────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--color-primary-strong);
+  outline: 2px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
@@ -79,6 +106,8 @@ body {
 ::selection {
   background-color: var(--color-highlight);
   color: #131A24;
+  background-color: var(--color-secondary);
+  color: #1A1A1A;
 }
 
 /* ── Scrollbar (webkit) ──────────────────────────────────── */

@@ -2,14 +2,12 @@
 
 import { useRef, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
   Sparkles,
-  Layers,
-  ExternalLink,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { showcaseWorks } from '@/data/projects';
@@ -39,6 +37,7 @@ function WorkIllustration({ type }: { type: ShowcaseWork['previewType'] }) {
           {/* Branch Bottom Node */}
           <rect x="230" y="152" width="60" height="36" rx="6" className="fill-[var(--color-surface)] stroke-[var(--color-border)]" strokeWidth="1.5" />
           <rect x="240" y="164" width="40" height="4" rx="2" className="fill-[var(--color-accent)]" />
+          <rect x="240" y="164" width="40" height="4" rx="2" className="fill-[var(--color-secondary)]" />
           <rect x="240" y="172" width="24" height="4" rx="2" className="fill-[var(--color-text-muted)] opacity-40" />
           {/* Target Endpoints */}
           <circle cx="340" cy="70" r="12" className="fill-[var(--color-surface)] stroke-[var(--color-border)]" strokeWidth="2" />
@@ -64,6 +63,7 @@ function WorkIllustration({ type }: { type: ShowcaseWork['previewType'] }) {
           <rect x="256" y="64" width="120" height="70" rx="6" className="fill-[var(--color-surface)] stroke-[var(--color-border)]" strokeWidth="1" />
           <rect x="270" y="90" width="92" height="6" rx="3" className="fill-[var(--color-border)]" />
           <rect x="270" y="90" width="68" height="6" rx="3" className="fill-[var(--color-accent)]" />
+          <rect x="270" y="90" width="68" height="6" rx="3" className="fill-[var(--color-secondary)]" />
           <rect x="256" y="146" width="120" height="70" rx="6" className="fill-[var(--color-surface)] stroke-[var(--color-border)]" strokeWidth="1" />
           <rect x="270" y="172" width="92" height="6" rx="3" className="fill-[var(--color-border)]" />
           <rect x="270" y="172" width="82" height="6" rx="3" className="fill-emerald-500" />
@@ -87,6 +87,7 @@ function WorkIllustration({ type }: { type: ShowcaseWork['previewType'] }) {
           <rect x="157" y="86" width="76" height="4" rx="2" className="fill-[var(--color-text-muted)] opacity-50" />
           <rect x="147" y="112" width="106" height="38" rx="6" className="fill-[var(--color-surface-soft)] stroke-[var(--color-border)]" strokeWidth="1" />
           <rect x="157" y="122" width="50" height="5" rx="2.5" className="fill-[var(--color-accent)]" />
+          <rect x="157" y="122" width="50" height="5" rx="2.5" className="fill-[var(--color-secondary)]" />
           <rect x="157" y="132" width="70" height="4" rx="2" className="fill-[var(--color-text-muted)] opacity-50" />
           {/* Bottom Nav */}
           <rect x="145" y="196" width="110" height="20" rx="4" className="fill-[var(--color-surface-soft)]" />
@@ -130,6 +131,8 @@ function WorkIllustration({ type }: { type: ShowcaseWork['previewType'] }) {
           <circle cx="120" cy="60" r="22" className="fill-[var(--color-primary-strong)] stroke-[var(--color-border)]" strokeWidth="2" />
           <circle cx="180" cy="60" r="22" className="fill-[var(--color-accent)] stroke-[var(--color-border)]" strokeWidth="2" />
           <circle cx="240" cy="60" r="22" className="fill-[var(--color-highlight)] stroke-[var(--color-border)]" strokeWidth="2" />
+          <circle cx="180" cy="60" r="22" className="fill-[var(--color-secondary)] stroke-[var(--color-border)]" strokeWidth="2" />
+          <circle cx="240" cy="60" r="22" className="fill-[var(--color-surface-soft)] stroke-[var(--color-border)]" strokeWidth="2" />
           <circle cx="300" cy="60" r="22" className="fill-[var(--color-surface)] stroke-[var(--color-border)]" strokeWidth="2" />
           <circle cx="360" cy="60" r="22" className="fill-[var(--color-text)] stroke-[var(--color-border)]" strokeWidth="2" />
           {/* Typography Scale Preview Bars */}
@@ -139,6 +142,7 @@ function WorkIllustration({ type }: { type: ShowcaseWork['previewType'] }) {
           {/* Token Badges */}
           <rect x="40" y="176" width="70" height="22" rx="11" className="fill-[var(--color-primary)] stroke-[var(--color-primary-strong)]" strokeWidth="1" />
           <rect x="120" y="176" width="70" height="22" rx="11" className="fill-[var(--color-accent)] stroke-[var(--color-border)]" strokeWidth="1" />
+          <rect x="120" y="176" width="70" height="22" rx="11" className="fill-[var(--color-secondary)] stroke-[var(--color-border)]" strokeWidth="1" />
           <rect x="200" y="176" width="70" height="22" rx="11" className="fill-[var(--color-surface)] stroke-[var(--color-border)]" strokeWidth="1" />
         </svg>
       );
@@ -149,6 +153,7 @@ function WorkIllustration({ type }: { type: ShowcaseWork['previewType'] }) {
           <rect width="400" height="240" rx="8" className="fill-[var(--color-surface-soft)]" />
           {/* Affinity Notes Clusters */}
           <rect x="36" y="36" width="90" height="74" rx="6" className="fill-[var(--color-highlight)] stroke-[var(--color-accent)]" strokeWidth="1.5" />
+          <rect x="36" y="36" width="90" height="74" rx="6" className="fill-[var(--color-surface-soft)] stroke-[var(--color-secondary)]" strokeWidth="1.5" />
           <rect x="48" y="50" width="66" height="5" rx="2.5" className="fill-[var(--color-text)] opacity-80" />
           <rect x="48" y="62" width="50" height="4" rx="2" className="fill-[var(--color-text-muted)] opacity-60" />
           <rect x="48" y="72" width="58" height="4" rx="2" className="fill-[var(--color-text-muted)] opacity-60" />
@@ -166,6 +171,7 @@ function WorkIllustration({ type }: { type: ShowcaseWork['previewType'] }) {
           <rect x="56" y="174" width="40" height="18" rx="2" className="fill-[var(--color-primary)]" />
           <rect x="116" y="152" width="40" height="40" rx="2" className="fill-[var(--color-primary-strong)]" />
           <rect x="176" y="142" width="40" height="50" rx="2" className="fill-[var(--color-accent)]" />
+          <rect x="176" y="142" width="40" height="50" rx="2" className="fill-[var(--color-secondary)]" />
           <rect x="236" y="160" width="40" height="32" rx="2" className="fill-[var(--color-border)]" />
           <rect x="296" y="148" width="40" height="44" rx="2" className="fill-emerald-500" />
         </svg>
@@ -262,7 +268,8 @@ function WorkCard({ work, index }: { work: ShowcaseWork; index: number }) {
 
 // ── Main Sticky Horizontal Scroll Component ───────────────────────────────────
 
-export function ShowcaseHorizontalScroll({ projects }: { projects?: unknown }) {
+export function ShowcaseHorizontalScroll({ projects }: { projects?: unknown } = {}) {
+  void projects;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -336,6 +343,7 @@ export function ShowcaseHorizontalScroll({ projects }: { projects?: unknown }) {
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-text-muted)] mb-2">
               <Sparkles size={14} className="text-[var(--color-accent)]" />
+              <Sparkles size={14} className="text-[var(--color-primary)]" />
               <span>Kompilasi Luaran Desain</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-text)] tracking-tight">

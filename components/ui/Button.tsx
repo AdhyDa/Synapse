@@ -16,11 +16,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-[var(--color-primary-strong)] text-white dark:bg-[var(--color-primary-strong)] dark:text-[#0B0F15] ' +
-    'hover:opacity-90 border border-[var(--color-primary-strong)] shadow-sm font-semibold',
+    'bg-[var(--color-primary)] text-[#FFF8E7] dark:bg-[var(--color-primary)] dark:text-[#11110F] ' +
+    'hover:opacity-90 border border-[var(--color-primary)] shadow-sm font-semibold',
   secondary:
     'bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)] ' +
-    'hover:border-[var(--color-primary-strong)] hover:bg-[var(--color-surface-soft)]',
+    'hover:border-[var(--color-primary)] hover:bg-[var(--color-surface-soft)]',
   ghost:
     'bg-transparent text-[var(--color-text-muted)] border border-transparent ' +
     'hover:text-[var(--color-text)] hover:bg-[var(--color-surface-soft)]',

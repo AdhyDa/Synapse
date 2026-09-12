@@ -8,12 +8,20 @@ import { cn } from '@/lib/cn';
 // ── Design Token Data ─────────────────────────────────────────────────────────
 
 const colorSwatches = [
-  { token: '--color-primary',        hex: '#A8C6E7', label: 'Primary',        usage: 'Interface accent' },
-  { token: '--color-primary-strong', hex: '#3B6C9D', label: 'Primary Strong', usage: 'Strong accent / interaction' },
-  { token: '--color-accent',         hex: '#E5A823', label: 'Accent',         usage: 'Accent highlight' },
-  { token: '--color-highlight',      hex: '#FFF0B3', label: 'Highlight',      usage: 'Highlight surface' },
-  { token: '--color-surface-soft',   hex: '#F5F1E8', label: 'Surface Soft',   usage: 'Soft surface layer' },
-  { token: '--color-background',     hex: '#FDFBF7', label: 'Background',     usage: 'Main background' },
+  { id: 'primary-interface',        token: '--color-primary',        hex: '#A8C6E7', label: 'Primary',        usage: 'Interface accent' },
+  { id: 'primary-strong',           token: '--color-primary-strong', hex: '#3B6C9D', label: 'Primary Strong', usage: 'Strong accent / interaction' },
+  { id: 'accent',                   token: '--color-accent',         hex: '#E5A823', label: 'Accent',         usage: 'Accent highlight' },
+  { id: 'highlight',                token: '--color-highlight',      hex: '#FFF0B3', label: 'Highlight',      usage: 'Highlight surface' },
+  { id: 'surface-soft',             token: '--color-surface-soft',   hex: '#F5F1E8', label: 'Surface Soft',   usage: 'Soft surface layer' },
+  { id: 'background-main',          token: '--color-background',     hex: '#FDFBF7', label: 'Background',     usage: 'Main background' },
+  { id: 'primary-brand',            token: '--color-primary',        hex: '#930500', label: 'Primary Brand',    usage: 'Crimson maroon primary accent' },
+  { id: 'secondary-accent',         token: '--color-secondary',      hex: '#95BBEA', label: 'Secondary Accent', usage: 'Periwinkle blue secondary' },
+  { id: 'background-warm-ivory',    token: '--color-background',     hex: '#FFF8E7', label: 'Background',       usage: 'Warm ivory canvas' },
+  { id: 'surface-card',             token: '--color-surface',        hex: '#FFFDF7', label: 'Surface',          usage: 'Elevated clean card layer' },
+  { id: 'border-line',              token: '--color-border',         hex: '#DED8C9', label: 'Border',           usage: 'Dividers & architectural lines' },
+  { id: 'text-primary',             token: '--color-text',           hex: '#1A1A1A', label: 'Text Primary',     usage: 'High-contrast body text' },
+  { id: 'primary-dark-mode',        token: '--color-primary-dark',   hex: '#FF6B63', label: 'Primary (Dark)',   usage: 'Vibrant coral red in dark mode' },
+  { id: 'background-dark-mode',     token: '--color-background-dark',hex: '#11110F', label: 'Background (Dark)',usage: 'Obsidian canvas in dark mode' },
 ];
 
 const typeScale = [
@@ -51,7 +59,7 @@ function ColorSwatch({ hex, label, usage }: { hex: string; label: string; usage:
           'w-full aspect-square rounded-[var(--radius-lg)] border border-[var(--color-border)]',
           'flex items-end justify-end p-2',
           'cursor-copy hover:scale-[1.02] transition-transform duration-[180ms] group',
-          'focus-visible:ring-2 focus-visible:ring-[var(--color-primary-strong)]'
+          'focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]'
         )}
         style={{ backgroundColor: hex }}
       >
@@ -83,8 +91,8 @@ function ComponentPreviews() {
           <button
             className={cn(
               'h-9 px-4 rounded-[var(--radius-md)] text-sm font-semibold',
-              'bg-[var(--color-primary-strong)] text-white dark:text-[#0B0F15]',
-              'border border-[var(--color-primary-strong)] shadow-sm',
+              'bg-[var(--color-primary)] text-[#FFF8E7] dark:text-[#11110F]',
+              'border border-[var(--color-primary)] shadow-sm',
               'hover:opacity-90 transition-opacity duration-[180ms]'
             )}
           >
@@ -95,7 +103,7 @@ function ComponentPreviews() {
               'h-9 px-4 rounded-[var(--radius-md)] text-sm font-medium',
               'bg-transparent text-[var(--color-text)]',
               'border border-[var(--color-border)]',
-              'hover:border-[var(--color-primary-strong)] transition-colors duration-[180ms]'
+              'hover:border-[var(--color-primary)] transition-colors duration-[180ms]'
             )}
           >
             Secondary
@@ -117,10 +125,10 @@ function ComponentPreviews() {
       <div className="space-y-3 p-5 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)]">
         <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)]">Badge</p>
         <div className="flex flex-wrap gap-2">
-          <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium bg-[var(--color-primary)] text-[var(--color-text)] border-[var(--color-primary-strong)]">
+          <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium bg-[var(--color-primary)] text-[#FFF8E7] border-[var(--color-primary)]">
             Pendidikan
           </span>
-          <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium bg-[var(--color-surface-soft)] text-[var(--color-text)] border-[var(--color-accent)]">
+          <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium bg-[var(--color-secondary)] text-[#1A1A1A] border-[var(--color-secondary)]">
             Industri
           </span>
           <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium bg-emerald-50 text-emerald-700 border-emerald-200">
@@ -225,7 +233,7 @@ export function DesignSystemPreview() {
             {activeTab === 'Warna' && (
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 sm:gap-6">
                 {colorSwatches.map((swatch) => (
-                  <ColorSwatch key={swatch.token} {...swatch} />
+                  <ColorSwatch key={swatch.id} {...swatch} />
                 ))}
               </div>
             )}

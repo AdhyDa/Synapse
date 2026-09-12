@@ -30,10 +30,12 @@ function getCategoryBadgeClass(category: AssignmentCategory): string {
   switch (category) {
     case 'Riset':
       return 'bg-[var(--color-primary)] text-[#131A24] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-primary)] border-[var(--color-primary-strong)]';
+      return 'bg-[var(--color-primary)] text-[#FFF8E7] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-primary)] border-[var(--color-primary)]';
     case 'Wireframe':
       return 'bg-[var(--color-surface-soft)] text-[var(--color-text)] border-[var(--color-border)]';
     case 'UI Design':
       return 'bg-[var(--color-highlight)] text-[#131A24] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-accent)] border-[var(--color-accent)]';
+      return 'bg-[var(--color-secondary)] text-[#1A1A1A] dark:bg-[var(--color-surface-soft)] dark:text-[var(--color-secondary)] border-[var(--color-secondary)]';
     case 'Testing':
       return 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800';
     case 'Presentasi':
@@ -132,7 +134,7 @@ export function AssignmentArchive({ assignments }: AssignmentArchiveProps) {
                   'relative px-3 py-1.5 rounded-[var(--radius-pill)] text-sm font-medium',
                   'border transition-colors duration-[180ms] cursor-pointer',
                   isActive
-                    ? 'bg-[var(--color-primary)] border-[var(--color-primary-strong)] text-[var(--color-text)]'
+                    ? 'bg-[var(--color-primary)] border-[var(--color-primary)] text-[#FFF8E7] dark:text-[#11110F]'
                     : 'bg-transparent border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:border-[var(--color-primary)]'
                 )}
               >
